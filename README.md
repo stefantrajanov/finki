@@ -1,0 +1,2 @@
+# finki
+Coding Exercises
