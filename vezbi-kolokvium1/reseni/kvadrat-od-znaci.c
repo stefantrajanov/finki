@@ -1,6 +1,7 @@
 //
 // Created by Stefan on 10/25/2022.
 //
+// исто е како матрица, arr[m][m] само шо, нема матрица.
 #include <stdio.h>
 
 int main (){
