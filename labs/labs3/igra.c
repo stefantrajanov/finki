@@ -1,15 +1,16 @@
-//
-// Created by Stefan on 11/9/2022.
-//
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
+int main()
+{
     int defaultPoints;
     int tierTwoPoints;
     int tierThreePoints;
 
     int tierOne;
     int tierTwo;
+
+
 
     scanf("%d %d %d %d %d",
           &defaultPoints,
@@ -19,34 +20,29 @@ int main(){
           &tierThreePoints
           );
 
-    int passedLevels;
+    int tier;
     int totalPoints = 0;
-    for (int i = 0; i < 3; ++i) {
-        scanf("%d", &passedLevels);
-        int thisGamePoints = 0;
-        if (passedLevels <= 0){continue;}
 
-        if (passedLevels <= tierOne){
-            thisGamePoints += passedLevels * defaultPoints;
+    for (int i = 0; i < 3; i++){
+        scanf("%d", &tier);
+        int gamePoints = 0;
+        if (tier <= 0){
+            continue;
         }
-        else if (passedLevels > tierOne && passedLevels <= tierTwo){
-            thisGamePoints += tierOne * defaultPoints;
-            thisGamePoints += (passedLevels - tierOne) * tierTwoPoints;
+        if (tier <= tierOne){
+            gamePoints += tier * defaultPoints;
         }
-        else
-        {
-            thisGamePoints += (tierOne) * defaultPoints;
-            thisGamePoints += (tierTwo - tierOne) * tierTwoPoints;
-            thisGamePoints += ((passedLevels - tierTwo)) * tierThreePoints;
+        if(tier > tierOne && tier <= tierTwo){
+            gamePoints += tier * tierTwoPoints;
         }
-        totalPoints += thisGamePoints;
+        if(tier > tierTwo){
+            gamePoints += tier * tierThreePoints;
+        }
+
+        totalPoints += gamePoints;
     }
 
     printf("%d", totalPoints);
 
-    // 100 3 150 6 200 4 0 0
-    // 102 4 131 5 142 4 7 5
-
-    // 408 + (408 + 131 + 142 + 142) + (408 + 131)
-    return 0;
+  return 0;
 }
