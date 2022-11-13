@@ -1,2 +1,2 @@
 # finki
-Coding Exercises
+Reseni zadaci
