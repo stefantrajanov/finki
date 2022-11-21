@@ -1,7 +1,6 @@
 //
 // Created by Stefan on 10/25/2022.
 //
-// исто е како матрица, arr[m][m] само шо, нема матрица.
 #include <stdio.h>
 
 int main (){
@@ -15,9 +14,11 @@ int main (){
             if(j == 0 || j == m - 1){
                 printf("%%");
             }
+
             if ((j > 0 && j < m - 1) && (i != 0 && i != m - 1)){
                 printf(".");
             }
+
             if ((j != 0 && j != m - 1)){
                 if((i == m - 1 || i == 0)) {
                     printf("@");
