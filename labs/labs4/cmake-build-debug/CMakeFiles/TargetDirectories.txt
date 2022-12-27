@@ -1,0 +1,8 @@
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs4/cmake-build-debug/CMakeFiles/labs4.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs4/cmake-build-debug/CMakeFiles/labs4_faktoriel.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs4/cmake-build-debug/CMakeFiles/labs4_delivo-so-3.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs4/cmake-build-debug/CMakeFiles/labs4_posledovatelni.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs4/cmake-build-debug/CMakeFiles/labs4_opadzacki.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs4/cmake-build-debug/CMakeFiles/labs4_test.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs4/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

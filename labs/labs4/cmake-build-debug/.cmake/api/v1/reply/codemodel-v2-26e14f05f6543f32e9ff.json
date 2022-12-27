@@ -1,0 +1,105 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "labs4",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "labs4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs4-Debug-e12b822e113576a49649.json",
+					"name" : "labs4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs4_delivo-so-3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs4_delivo-so-3-Debug-ae24c014bf5f917a1b73.json",
+					"name" : "labs4_delivo-so-3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs4_faktoriel::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs4_faktoriel-Debug-683a3febb975d6a2512a.json",
+					"name" : "labs4_faktoriel",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs4_opadzacki::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs4_opadzacki-Debug-207a112c663dceea1a74.json",
+					"name" : "labs4_opadzacki",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs4_posledovatelni::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs4_posledovatelni-Debug-386f585e85ff4e2e1f24.json",
+					"name" : "labs4_posledovatelni",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs4_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs4_test-Debug-666d4bad83fbf45bed30.json",
+					"name" : "labs4_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs4/cmake-build-debug",
+		"source" : "C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs4"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

@@ -1,0 +1,10 @@
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug/CMakeFiles/labs3.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug/CMakeFiles/labs3_kolega.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug/CMakeFiles/labs3_struja.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug/CMakeFiles/labs3_vreme.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug/CMakeFiles/labs3_taxi.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug/CMakeFiles/labs3_test.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug/CMakeFiles/labs3_ujp.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug/CMakeFiles/labs3_igra.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

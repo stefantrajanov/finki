@@ -1,0 +1,17 @@
+# ninja log v5
+1	59	6902272210551375	CMakeFiles/labs4.dir/milan-marko.c.obj	b264afed594af6bf
+0	85	6902281322944680	CMakeFiles/labs4_delivo-so-3.dir/delivi-so-3.c.obj	7a86b087af1628f8
+59	142	6902272211349236	labs4.exe	f807f18b83b912e9
+56	139	6902278066901963	labs4_faktoriel.exe	bd1da3b0bffea870
+1	55	6902278066104099	CMakeFiles/labs4_faktoriel.dir/faktoriel.c.obj	3cb8466a25c365ac
+86	188	6902281323942012	labs4_delivo-so-3.exe	57c292f6b70abbfd
+87	263	6902308212356261	labs4_posledovatelni.exe	95a25fa92380bf4c
+1	87	6902308210642747	CMakeFiles/labs4_posledovatelni.dir/razlika-pomegu-2-posl.c.obj	449a1e4ff7ef491b
+2	68	6902312556236518	CMakeFiles/labs4_opadzacki.dir/opadzacki.c.obj	23d6300a71273b00
+68	158	6902312557115806	labs4_opadzacki.exe	b2fab0ecc449a3ef
+0	100	6902534623064731	CMakeFiles/labs4_test.dir/test.c.obj	8fcd9ca03ed3c750
+100	333	6902534625364663	labs4_test.exe	b661877b24416664
+1	77	6902535744862662	CMakeFiles/labs4_test.dir/test.c.obj	8fcd9ca03ed3c750
+78	171	6902535745770230	labs4_test.exe	b661877b24416664
+2	102	6902542385023252	CMakeFiles/labs4_test.dir/test.c.obj	8fcd9ca03ed3c750
+102	212	6902542386100358	labs4_test.exe	b661877b24416664

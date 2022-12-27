@@ -1,0 +1,1 @@
+CMakeLists.txt not found in C:\Users\Stefan\Desktop\finki\ucenje\Strukturno\ReseniZadaci\labs\labs5 Select CMakeLists.txt

@@ -1,0 +1,105 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "labs5",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-45b670628b24119324c2.json",
+					"name" : "test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zad1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zad1-Debug-b1099815e0742699ad7e.json",
+					"name" : "zad1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zad2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zad2-Debug-3801def03d0aee9398fe.json",
+					"name" : "zad2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zad3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zad3-Debug-5c94bfe55d7a849a8ca5.json",
+					"name" : "zad3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zad4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zad4-Debug-3d99670c0c422785bf68.json",
+					"name" : "zad4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zad5::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zad5-Debug-5e0c13e000eb0d5c12be.json",
+					"name" : "zad5",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs6/cmake-build-debug",
+		"source" : "C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs6"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

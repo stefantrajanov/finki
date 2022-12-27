@@ -5,38 +5,24 @@
 
 int main(){
 
-// alternitive
-//    int time;
-//    int index = 1;
-//    scanf("%d", &time);
-//    int temp = time;
-//    for (int i = 2; i <= 3; ++i) {
-//        scanf("%d", &time);
-//        if (time < temp){
-//            index = i;
-//            temp = time;
-//        }
-//    }
-//
-//    printf("%d", index);
+    float first;
+    float second;
+    float third;
 
-    int time1, time2, time3;
+    scanf("%f %f %f", &first, &second, &third);
 
-    scanf("%d %d %d", &time1,&time2,&time3);
-
-    int minIndex;
-    if(time1 < time2 && time1 < time3){
-        minIndex = 1;
-        printf("%d", minIndex);
-        return 0;
+    if (first <= second && first <= third)
+    {
+        printf("1");
     }
-    if(time2 < time1 && time2 < time3){
-        minIndex = 2;
-        printf("%d", minIndex);
-        return 0;
+    if (second <= first && second <= third)
+    {
+        printf("2");
+    }
+    if (third <= second && third <= first)
+    {
+        printf("3");
     }
 
-    minIndex = 3;
-    printf("%d", minIndex);
     return 0;
 }

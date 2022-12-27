@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "labs3",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "labs3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs3-Debug-499252dc8ebb61f9c9a0.json",
+					"name" : "labs3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs3_igra::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs3_igra-Debug-dce9ded27a6250e28cbe.json",
+					"name" : "labs3_igra",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs3_kolega::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs3_kolega-Debug-650a9bd9610cece00173.json",
+					"name" : "labs3_kolega",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs3_struja::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs3_struja-Debug-b73a6050b9637e98a3df.json",
+					"name" : "labs3_struja",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs3_taxi::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs3_taxi-Debug-b65c85002bd0f888ed1a.json",
+					"name" : "labs3_taxi",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs3_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs3_test-Debug-a5a7c347eef49d919c03.json",
+					"name" : "labs3_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs3_ujp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs3_ujp-Debug-fd7d7a54a113e4df27e2.json",
+					"name" : "labs3_ujp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "labs3_vreme::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-labs3_vreme-Debug-4feb2ba35bf728f4d3c1.json",
+					"name" : "labs3_vreme",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3/cmake-build-debug",
+		"source" : "C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs3"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

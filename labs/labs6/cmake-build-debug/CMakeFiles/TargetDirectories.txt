@@ -1,0 +1,8 @@
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs6/cmake-build-debug/CMakeFiles/zad1.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs6/cmake-build-debug/CMakeFiles/zad2.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs6/cmake-build-debug/CMakeFiles/zad3.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs6/cmake-build-debug/CMakeFiles/zad4.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs6/cmake-build-debug/CMakeFiles/zad5.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs6/cmake-build-debug/CMakeFiles/test.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs6/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Stefan/Desktop/finki/ucenje/Strukturno/ReseniZadaci/labs/labs6/cmake-build-debug/CMakeFiles/rebuild_cache.dir
