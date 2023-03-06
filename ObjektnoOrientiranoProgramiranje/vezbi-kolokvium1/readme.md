@@ -1,2 +1,1 @@
-Starter Tekstot e daden na pocetok
-Starter tekstot e mainot
+int main() e starter kod za bilo koja zadaca
