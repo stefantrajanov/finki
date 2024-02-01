@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        .input-section {
+            display: flex;
+            justify-content: space-between;
+            width: 250px;
+            align-items: center;
+        }
+
+        input {
+            height: 10px;
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+        }
+
+        table, tr, td {
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        table {
+            width: 600px;
+        }
+
+	</style>
+
+</head>
+<body>
+	<div class="main">
+		<div>
+			<h1>Details</h1>
+			<div class="input-section">
+				<p>Name</p>
+				<input type="text"/>
+			</div>
+			<div class="input-section">
+				<p>Index</p>
+				<input type="text"/>
+			</div>
+			<div class="input-section">
+				<p>Phone</p>
+				<input type="text"/>
+			</div>
+			<div class="input-section">
+				<p>Grade</p>
+				<form id="radioForm">
+					<input type="radio" name="grade" value="5">
+					<label>5</label>
+					<input type="radio" name="grade" value="6">
+					<label>6</label>
+					<input type="radio" name="grade" value="7">
+					<label>7</label>
+					<input type="radio" name="grade" value="8">
+					<label>8</label>
+					<input type="radio" name="grade" value="9">
+					<label>9</label>
+					<input type="radio" name="grade" value="10">
+					<label>10</label>
+				</form>
+			</div>
+			<div class="input-section">
+				<p>Session</p>
+				<select id="session">
+					<option value="jan">January</option>
+					<option value="june">June</option>
+					<option value="sept">September</option>
+				</select>
+			</div>
+			<button onclick="import_student()">Import Student</button>
+		</div>
+
+		<div class="revert">
+			<h2>Revert History</h2>
+			<ul>
+				<li style="list-style: none" id="targetRevert"></li>
+			</ul>
+		</div>
+	</div>
+
+	<h1 id="average">Students (average grade 7.2)</h1>
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Index</td>
+			<td>Phone</td>
+			<td>Grade</td>
+			<td>Session</td>
+			<td>Actions
+			</td>
+		</tr>
+		<tr>
+			<td>Tobias Coombe</td>
+			<td>123456</td>
+			<td>078/857-363</td>
+			<td>10</td>
+			<td>September</td>
+			<td>
+				<button onclick="confirmButton(this)">Confirm</button>
+				<button onclick="revertStudent()">Revert</button>
+		</tr>
+		<tr id="tableTarget"></tr>
+	</table>
+
+
+	<script>
+        let grades = 0;
+        let students = 0;
+
+        function checkIfEverythingFilledOut(inputs, grade) {
+            if (grade == '') {
+                alert('Please fill everything out');
+                return false;
+            }
+            for (const input of inputs) {
+                if (input.value == '') {
+                    alert('Please fill everything out');
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function confirmButton(button) {
+            var children = button.parentElement.children;
+            button.parentElement.parentElement.style.backgroundColor = 'lightgreen';
+
+            // console.log(children);
+            children[0].setAttribute("disabled", "");
+            children[1].setAttribute("disabled", "");
+        }
+
+        function revertStudent(index, grade, button) {
+            var target = document.getElementById('targetRevert');
+
+            var newElement = document.createElement('li');
+            newElement.innerHTML = `${index} - grade ${grade}`
+
+            target.parentNode.insertBefore(newElement, target);
+
+            students--;
+            grades -= grade;
+            document.getElementById('average').innerHTML = `Students (average grade ${grades / students})`;
+            button.parentElement.parentElement.remove();
+        }
+
+        function import_student() {
+            let inputs = document.getElementsByTagName('input');
+
+            let name = inputs[0].value;
+            let index = inputs[1].value;
+            let phone = inputs[2].value;
+
+
+            //format phone
+            let formatedPhone = phone[0] + phone[1] + phone[2] + '/' + phone[3] + phone[4] + phone[5] + '-' +
+                phone[6] + phone[7] + phone[8];
+
+
+            let session = document.getElementById('session').value;
+
+            let radioButtons = document.getElementById('radioForm').elements['grade'];
+            let grade = '';
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    grade = radioButton.value;
+                    break;
+                }
+            }
+
+            if (!checkIfEverythingFilledOut(inputs, grade)) {
+                return;
+            }
+
+            grades += parseInt(grade);
+            students++;
+
+            var target = document.getElementById('tableTarget');
+
+            var newElement = document.createElement('tr');
+            newElement.innerHTML =
+                `
+	            <td>${name}</td>
+	            <td>${index}</td>
+	            <td>${formatedPhone}</td>
+	            <td>${grade}</td>
+	            <td>${session}</td>
+	            <td><button onclick="confirmButton(this)">Confirm</button><button onclick="revertStudent(${index}, ${grade}, this)">Revert</button></td>
+	            `
+
+            target.parentNode.insertBefore(newElement, target);
+
+            document.getElementById('average').innerHTML = `Students (average grade ${grades / students})`;
+        }
+	</script>
+</body>
+</html>

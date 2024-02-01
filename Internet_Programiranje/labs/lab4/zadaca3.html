@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zadaca3</title>
+</head>
+<style>
+    .input {
+        display: flex;
+        /*justify-content: space-between;*/
+        width: 150px;
+        align-items: center;
+    }
+</style>
+<body>
+	<div id="main">
+		<h1>Промена на позадина</h1>
+		<form id="form">
+			<input type="radio" name="choice" value="color" />
+			<label>Color</label>
+			<input type="radio" name="choice" value="image"/>
+			<label>Image</label>
+		</form>
+		<div class="input">
+			<p>Value:</p>
+			<input type="text" id="input"/>
+		</div>
+		<button onclick="change()">Промени</button>
+	</div>
+	<script>
+        function change() {
+            let value = document.getElementById('input');
+            let radio = document.getElementsByName('choice');
+
+            let radioValue = "";
+            for (const radioElement of radio) {
+                if (radioElement.checked){
+                    radioValue = radioElement.value;
+                    break;
+                }
+            }
+
+            let main = document.getElementById('main');
+
+            if (radioValue == "image"){
+                main.style.backgroundImage = `url(${value.value})`;
+                main.style.backgroundColor = '';
+
+            }else{
+                main.style.backgroundColor = value.value;
+                main.style.backgroundImage = ``;
+            }
+        }
+	</script>
+</body>
+</html>

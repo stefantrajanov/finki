@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input id="inputNumber" type="text"/>
+	<button onclick="shiftLeft()"> < </button>
+	<button onclick="shiftRight()"> > </button>
+	<button onclick="convert()"> CONVERT </button>
+	<button onclick="store_number()"> STORE </button>
+	<button onclick="check_number()" id="target"> CHECK </button>
+	<p id="isPerfect"></p>
+
+	<ul>
+		<li style="list-style: none" id="listTarget"></li>
+
+	</ul>
+
+
+	<script>
+        function shiftRight(){
+            let number = document.getElementById('inputNumber').value;
+
+            let sliced = number.slice(0, -2);
+
+            let lastTwo = number.slice(-2);
+
+            document.getElementById('inputNumber').value = lastTwo + sliced;
+        }
+        function shiftLeft(){
+            let number = document.getElementById('inputNumber').value;
+
+            let sliced = number.slice(2);
+
+            let firstTwo = number.slice(0, -8);
+
+            document.getElementById('inputNumber').value = sliced + firstTwo;
+        }
+		function convert(){
+            let number = document.getElementById('inputNumber').value;
+
+            let result = '';
+            for (let i = 0; i < number.length; i++) {
+	            let value = parseInt(number[i]) - 2;
+                value = value.toString();
+
+                if (value < 0){
+                    value = '7';
+                }
+
+                result+=value;
+            }
+
+            document.getElementById('inputNumber').value = result;
+		}
+		function store_number(){
+            let number = document.getElementById('inputNumber').value;
+            let target = document.getElementById('listTarget');
+
+            let newStoredNumber = document.createElement('li');
+            newStoredNumber.innerHTML = number;
+
+            target.parentNode.insertBefore(newStoredNumber, target.nextSibling);
+		}
+		function check_number(){
+            let inputElement = document.getElementById('inputNumber');
+            let number = inputElement.value;
+
+            let counter = 0;
+            for (let i = 0; i < number.length; i++) {
+                let value = parseInt(number[i]);
+                if (value % 3 == 0){
+                    counter++;
+                }
+            }
+
+            let target = document.getElementById('isPerfect');
+
+            if (counter >= 3){
+                target.innerHTML = 'Perfecten e'
+            }else{
+                target.innerHTML = '';
+            }
+		}
+
+	</script>
+</body>
+</html>

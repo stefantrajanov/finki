@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zadaca2</title>
+</head>
+<style>
+	.input{
+		display: flex;
+		/*justify-content: space-between;*/
+		width: 150px;
+		align-items: center;
+	}
+	select{
+		width: 100%;
+	}
+	.button{
+		display: flex;
+		width: 150px;
+		justify-content: end;
+	}
+</style>
+<body>
+	<div class="input">
+		<p>Items: </p>
+		<input type="text" id="input"/>
+	</div>
+	<div class="input">
+		<p>Type: </p>
+		<select id="select">
+			<option value="radio" selected>Radio Button</option>
+			<option value="checkbox">Check Box</option>
+		</select>
+	</div>
+	<div class="button">
+		<button onclick="show()">Прикажи</button>
+	</div>
+	<form style="margin-top: 10px">
+		<div id="target"></div>
+	</form>
+
+	<script>
+		function show(){
+            let items = document.getElementById('input').value;
+            let type = document.getElementById('select').value;
+
+            let splited = items.split(",");
+
+            let target = document.getElementById('target');
+            for (let element of splited) {
+	            var newElement = document.createElement('input');
+                newElement.name = 'options';
+                newElement.type = type;
+                var name = document.createElement('label');
+                name.innerHTML = element;
+
+                target.parentNode.insertBefore(newElement, target)
+                target.parentNode.insertBefore(name, target)
+            }
+		}
+	</script>
+</body>
+</html>

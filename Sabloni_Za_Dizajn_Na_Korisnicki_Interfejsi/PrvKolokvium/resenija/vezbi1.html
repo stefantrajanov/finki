@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1</title>
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery-ui.js"></script>
+	<link rel="stylesheet" href="jquery/jquery-ui.css">
+
+	<style>
+        #manufactures {
+            display: flex;
+            justify-content: center;
+        }
+
+        #manufactures button {
+            font-size: 22px;
+            margin: 20px;
+            padding: 10px;
+            width: 200px;
+        }
+
+        #backButton {
+            font-size: 22px;
+            margin: 20px;
+            padding: 10px;
+            width: 200px;
+        }
+
+        .item {
+            display: inline-block;
+            text-align: center;
+            font-size: 20px;
+            width: 300px;
+            height: 350px;
+            border: 1px solid black;
+            margin: 5px;
+        }
+
+        .item img {
+            width: 250px;
+            height: 250px;
+        }
+
+        #man_1, #man_2, #man_3, #man_4 {
+            display: grid;
+            justify-content: center;
+        }
+
+
+
+        #nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        #nav button {
+            font-size: 18px;
+            margin: 15px;
+            padding: 5px;
+            width: 100px;
+        }
+        .info{
+	        display: flex;
+	        justify-content: center;
+            flex-direction: column;
+	        font-size: 18px;
+            /*width: 500px;*/
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+	</style>
+</head>
+<body>
+	<button id="backButton">Back</button>
+	<div id="manufactures">
+		<button id="1">DJI</button>
+		<button id="2">ELIOS</button>
+		<button id="3">PARROT</button>
+		<button id="4">YUNEEC</button>
+	</div>
+
+	<div id="nav">
+		<button id="prev">Prev</button>
+		<button id="next">Next</button>
+	</div>
+	<div class="info">
+		<h1>DJI</h1>
+		<p>information</p>
+	</div>
+	<div id="man_1">
+		<div class="row">
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+		</div>
+	</div>
+	<div id="man_2">
+		<div class="row">
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+		</div>
+	</div>
+	<div id="man_3">
+		<div class="row">
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+		</div>
+	</div>
+	<div id="man_4">
+		<div class="row">
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+			<div class="item">
+				<p>Name</p>
+				<img src="images/DJI/AIR2S.jpg"/>
+				<button>Add to cart</button>
+				<button class="comment">Comment</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="dialog">
+		<p>Vnesi ocenka</p>
+		<input type="text" id="inputOcenka"/>
+	</div>
+
+	<script>
+        $(document).ready(function () {
+            var infoData = {
+                1:
+                    'Our platforms empower them to capture images that were once out of reach. Our flying and camera stabilization systems redefine camera placement and motion. Amazing photos and video, treasured personal memories, and high-end professional imagery are captured every day, in every corner of the world using DJI products.\n' +
+                    '\n' +
+                    'We do this through an unparalleled commitment to R&D, a culture of constant innovation and curiosity, and a focus on transforming complex technology into easy-to-use devices. Building on the ethos of “form follows function,” our products combine advanced technology with dynamic designs.',
+                2:
+	                `Our platforms empower them to capture images that were once out of reach. Our flying and camera stabilization systems redefine camera placement and motion. Amazing photos and video, treasured personal memories, and high-end professional imagery are captured every day, in every corner of the world using DJI products.
+
+We do this through an unparalleled commitment to R&D, a culture of constant innovation and curiosity, and a focus on transforming complex technology into easy-to-use devices. Building on the ethos of “form follows function,” our products combine advanced technology with dynamic designs.`,
+	            3:
+		            `We started out as a manufacturer of remote-controlled aircraft for model-making enthusiasts. Coming from this background, we recognise that safety is the cornerstone of the usability and capability of our products. This belief extends to the empowerment of the people who keep us safe every day. From Fire and Rescue to the Coast Guard and Law Enforcement, we believe a view from above will help first responders overcome obstacles and make us safer. Our humble beginnings started with innovation and accessibility in the aircraft industry. From the first commercially successful ready-to-fly fixed wing RC airplane, to ground-breaking electric aircraft and next-generation aerial video quadcopters, Yuneec has pushed the limits above and beyond in electric aviation for over 15 years.`,
+	            4:
+		            `Carrying its own protective frame, Elios is collision-tolerant. This means you can access the tightest spaces without any risk of crashing. No need to focus on avoiding obstacles, Elios bounces off and roll on them to find its way. You can fly close or even in direct contact with humans without any risks of injuries. Elios embeds a full HD camera, a thermal camera, and an on-board LED lighting system with a remotely adjustable intensity. Once you have reached the most inaccessible places, you have all the tools onboard to take the best possible shot in nearly any lighting conditions.`
+            }
+            var title = {
+                1: 'DJI',
+                2: 'ELIOS',
+                3: 'PARROT',
+                4: 'YUNNEC'
+            }
+
+            $('.info p').hide();
+
+            $('#backButton').hide();
+            $('#man_1, #man_2, #man_3, #man_4').hide();
+            $('#nav').hide();
+            $('.info').hide();
+
+            $('#backButton').click(function () {
+                $('#manufactures').show();
+                $('#nav').hide();
+                $('#man_1, #man_2, #man_3, #man_4').hide();
+                $('#backButton').hide();
+                $('.info').hide();
+            })
+
+	        $('#dialog').dialog({
+		        autoOpen: false,
+		        modal: true,
+		        buttons:{
+                    'Vnesi': function (){
+                        $(this).dialog('close');
+                        $('#inputOcenka').val('');
+                    }
+		        }
+	        })
+
+            $('.comment').click(function (){
+                $('#dialog').dialog('open');
+            })
+
+            let currentActiveId = 0;
+            $('#1, #2, #3, #4').click(function () {
+                let id = $(this).attr('id');
+                $('#man_1, #man_2, #man_3, #man_4').hide();
+                $('#man_' + id).show();
+                $('.info').show();
+                $('.info > p').text(infoData[`${id}`])
+                $('.info > h1').text(title[`${id}`])
+                $('#nav').show();
+                $('#backButton').show();
+                $('#manufactures').hide();
+                currentActiveId = parseInt(id);
+            })
+
+            $('#prev').click(function () {
+                currentActiveId--;
+                if (currentActiveId < 1) {
+                    currentActiveId = 4;
+                }
+                $('#man_1, #man_2, #man_3, #man_4').hide();
+                $('#man_' + currentActiveId).show();
+                $('.info > p').text(infoData[`${currentActiveId}`])
+                $('.info > h1').text(title[`${currentActiveId}`])
+            })
+
+            $('#next').click(function () {
+                currentActiveId++;
+                if (currentActiveId > 4) {
+                    currentActiveId = 1;
+                }
+
+                $('#man_1, #man_2, #man_3, #man_4').hide();
+                $('#man_' + currentActiveId).show();
+                $('.info > p').text(infoData[`${currentActiveId}`])
+                $('.info > h1').text(title[`${currentActiveId}`])
+            })
+
+	        $('h1').click(function (){
+                $(this).siblings('p').slideToggle(200);
+	        })
+        })
+	</script>
+</body>
+</html>

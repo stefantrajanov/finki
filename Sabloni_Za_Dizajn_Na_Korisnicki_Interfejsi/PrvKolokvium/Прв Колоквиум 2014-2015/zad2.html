@@ -1,0 +1,46 @@
+﻿<html>
+	<head>
+	<meta charset="utf-8">
+		<title>Vtora zadaca</title>
+		<style>
+			#progress_bar{
+				border:1px solid black;
+				height:240px;
+				width:20px;
+				margin-top: 20px;
+			}
+			 #progress{
+				width:20px;
+				height:20px;
+				background: blue;
+			}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.js"></script>
+		<script>
+			$(function(){
+				$("#step_up").click(function(){
+					var kolku = $("#progress").css("margin-top");
+				    var a = parseInt(kolku, 10);
+					if(a!=0){
+				$("#progress").css("margin-top", a-20 +"px");
+					}
+				});
+				$("#step_down").click(function(){
+					var kolku = $("#progress").css("margin-top");
+				    var a = parseInt(kolku, 10);
+				    if(a<220)
+				$("#progress").css("margin-top", a+20 +"px");
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<button id="step_up">StepUp</button>
+		<button id="step_down">StepDown</button></br>
+		<div id="progress_bar"> 
+			<div id="progress"></div>
+		</div>
+	</body>
+</html>

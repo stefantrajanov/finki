@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zadaca1</title>
+</head>
+<body>
+	<script>
+		function deleteDuplicates(list){
+            for (let i = 0; i < list.length; i++) {
+                let currentElement = list[i];
+                for (let j = 0; j < list.length; j++) {
+                    if (currentElement == list[j] && i != j){
+                        list.splice(j, 1);
+                        j--;
+                    }
+                }
+            }
+
+            return list;
+		}
+	</script>
+</body>
+</html>

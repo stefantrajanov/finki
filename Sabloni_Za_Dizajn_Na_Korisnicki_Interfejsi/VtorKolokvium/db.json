@@ -1,0 +1,149 @@
+{
+  "pa192": {
+    "city": "Paris",
+    "country": {
+      "name": "France",
+      "code": "FR"
+    },
+    "details": "landmarks",
+    "count": 5,
+    "images": [],
+    "objects": {
+      "available": {
+        "active": 3,
+        "landmarks": [
+          {
+            "name": "Eiffel Tower",
+            "region": "Center",
+            "business_hours": "07:00-21:00",
+            "address": "Champ de Mars, 5 Av. Anatole France, 75007 Paris, France",
+            "notes": [],
+            "url": "https://www.toureiffel.paris/en",
+            "ticket_price": "15.50",
+            "photo_url": "https://carsetblog.com/wp-content/uploads/2028/11/eiffel-tower.jpg"
+          },
+          {
+            "name": "Arc de Triomphe",
+            "region": "Center",
+            "business_hours": "10:00-21:00",
+            "address": "Pl. Charles de Gaulle, 75008 Paris, France",
+            "notes": [],
+            "url": "https://en.wikipedia.org/wiki/Arc_de_Triomphe",
+            "ticket_price": "15.50"
+          }
+        ]
+      }
+    }
+  },
+  "ch7956": {
+    "city": "Chicago",
+    "country": {
+      "name": "United States",
+      "code": "US"
+    },
+    "details": "attractions",
+    "count": 3,
+    "images": [],
+    "objects": {
+      "available": {
+        "active": 2,
+        "landmarks": [
+          {
+            "name": "Millennium Park",
+            "region": "Downtown",
+            "business_hours": "06:00-23:00",
+            "address": "201 E Randolph St, Chicago, IL 60602, United States",
+            "notes": ["Home to the famous Cloud Gate sculpture."],
+            "url": "https://www.cityofchicago.org/city/en/depts/dca/supp_info/millennium_park.html",
+            "ticket_price": "15.50"
+
+          },
+          {
+            "name": "Art Institute of Chicago",
+            "region": "Downtown",
+            "business_hours": "10:30-17:00",
+            "address": "111 S Michigan Ave, Chicago, IL 60603, United States",
+            "notes": ["Renowned art museum."],
+            "url": "https://www.artic.edu/",
+            "ticket_price": "15.50"
+
+          }
+        ]
+      }
+    }
+  },
+  "at5702": {
+    "city": "Athens",
+    "country": {
+      "name": "Greece",
+      "code": "GR"
+    },
+    "details": "historical sites",
+    "count": 4,
+    "images": [],
+    "objects": {
+      "available": {
+        "active": 2,
+        "landmarks": [
+          {
+            "name": "Acropolis",
+            "region": "Historic Center",
+            "business_hours": "08:00-20:00",
+            "address": "Acropolis of Athens, Athens, Greece",
+            "notes": ["Iconic ancient citadel."],
+            "url": "https://www.wmf.org/project/acropolis",
+            "ticket_price": "15.50"
+
+          },
+          {
+            "name": "Parthenon",
+            "region": "Historic Center",
+            "business_hours": "08:00-20:00",
+            "address": "Acropolis of Athens, Athens, Greece",
+            "notes": ["Ancient temple dedicated to Athena."],
+            "url": "https://www.wmf.org/project/parthenon",
+            "ticket_price": "15.50"
+
+          }
+        ]
+      }
+    }
+  },
+  "am22265": {
+    "city": "Amsterdam",
+    "country": {
+      "name": "Netherlands",
+      "code": "NL"
+    },
+    "details": "museums",
+    "count": 3,
+    "images": [],
+    "objects": {
+      "available": {
+        "active": 2,
+        "landmarks": [
+          {
+            "name": "Rijksmuseum",
+            "region": "Museumplein",
+            "business_hours": "09:00-17:00",
+            "address": "Museumstraat 1, 1071 XX Amsterdam, Netherlands",
+            "notes": ["National museum with a vast art collection."],
+            "url": "https://www.rijksmuseum.nl/en",
+            "ticket_price": "15.50"
+
+          },
+          {
+            "name": "Van Gogh Museum",
+            "region": "Museumplein",
+            "business_hours": "09:00-17:00",
+            "address": "Museumplein 6, 1071 DJ Amsterdam, Netherlands",
+            "notes": ["Dedicated to the works of Vincent van Gogh."],
+            "url": "https://www.vangoghmuseum.nl/en",
+            "ticket_price": "15.50"
+
+          }
+        ]
+      }
+    }
+  }
+}

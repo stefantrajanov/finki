@@ -1,0 +1,46 @@
+$(document).ready(function (){
+    $("h1").click(function () {
+        $(this).siblings(".additional_info").slideToggle(200)
+    })
+    $("#dialog").dialog({
+        autoOpen: false,
+        modal: true,
+        buttons:{
+            Submit:function () {
+                $("#dialog").dialog("close")
+            }
+        }
+    })
+    $(".comment").click(function () {
+        $("#dialog").dialog("open")
+    })
+    var selected=1
+    $("li").click(function () {
+        selected = $(this).attr("id")
+         $("#osnoven_pogled").hide()
+        $("#kopchinja").show()
+        $("#detail"+selected).show()
+    })
+    $("#top").click(function () {
+        $("body>div").hide()
+        $("#osnoven_pogled").show()
+
+    })
+    $("#next").click(function () {
+        $("#detail"+selected).hide()
+        selected++
+        if(selected==5){
+            selected=1;
+        }
+        $("#detail"+selected).show()
+    })
+    $("#prev").click(function () {
+        $("#detail"+selected).hide()
+        selected--
+        if(selected==0){
+            selected=4;
+        }
+        $("#detail"+selected).show()
+    })
+})
+

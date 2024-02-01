@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zadaca2</title>
+</head>
+<body>
+	<div>
+		<div style="text-align:right; float:left">
+			<label id="obid">Обиди 0</label>
+			<p>Погодок: <input id="guess" style="width:150px"/>
+			</p>
+			<button onclick="tryToGuess()">Погоди</button>
+			<button onclick="go_again()">Од почеток</button>
+		</div>
+	</div>
+	<br/>
+	<div id="prikaz"></div>
+  <script>
+    let randomNum;
+    while (true){
+      let random = Math.random() * 10000;
+      if (random >= 1000 && random <= 9999){
+        randomNum = Math.round(random);
+        break;
+      }
+    }
+    console.log(randomNum);
+
+    let tries = 0;
+    function tryToGuess(){
+        if (tries > 10){
+            return;
+        }
+        if (tries == 10){
+            let newElement = document.createElement('p');
+	            newElement.innerHTML = `Не успеавте да погодите од 10 обиди. Бројот е ${randomNum}`;
+
+            document.getElementById('prikaz').parentNode.insertBefore(newElement,document.getElementById('prikaz'))
+	        tries++
+	        return;
+        }
+        tries++;
+      let guess = document.getElementById('guess').value;
+
+      let has = 0;
+      for (let i = 0; i < guess.length; i++) {
+        for (let j = 0; j < guess.length; j++) {
+          if (guess[i] == randomNum.toString()[j] && i != j){
+            has++;
+          }
+        }
+      }
+
+      let rightPlace = 0;
+      for (let i = 0; i < guess.length; i++) {
+        if (guess[i] == randomNum.toString()[i]){
+          rightPlace++;
+        }
+      }
+      let newElement = document.createElement('p');
+      newElement.innerHTML = `Има ${has}, на место ${rightPlace} ${guess}`;
+
+      document.getElementById('prikaz').parentNode.insertBefore(newElement,document.getElementById('prikaz'))
+	    document.getElementById('obid').innerHTML = `Обиди ${tries}`
+      // console.log(`Има ${has}, на место ${rightPlace} ${guess}`);
+    }
+
+    function go_again(){
+        window.location.reload();
+    }
+
+  </script>
+</body>
+</html>

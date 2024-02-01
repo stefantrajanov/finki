@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>4</title>
+  <style>
+    input {
+      margin: 5px;
+      width: 50px;
+    }
+    button{
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text"/>
+  <input type="text"/>i
+  <br/>
+  <input type="text"/>
+  <input type="text"/>i
+  <br/>
+  <button onclick="add_number()">Add</button>
+  <br/>
+  <input type="text"/>
+  <input type="text"/>i
+
+  <script>
+    function add_number(){
+      let inputs = document.getElementsByTagName('input');
+      let a = parseInt(inputs[0].value);
+      let a_ = parseInt(inputs[2].value);
+
+      let b = parseInt(inputs[1].value);
+      let b_ = parseInt(inputs[3].value);
+
+      let resultA = inputs[4];
+      let resultB = inputs[5];
+
+      resultA.value = a + a_;
+      resultB.value = b + b_;
+     }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+  <script>
+    let sentences = [];
+    sentences[0] = prompt('Vnesi ja prvata recenica');
+    sentences[1] = prompt('Vnesi ja vtorata recenica');
+    sentences[2] = prompt('Vnesi ja tretata recenica');
+
+    var maxWord = '';
+
+    for (let sentence of sentences) {
+      sentence = sentence.split(" ");
+      for (const word of sentence) {
+        if (word.length > maxWord.length){
+          maxWord = word;
+        }
+      }
+    }
+
+    alert(maxWord);
+
+  </script>
+
+</body>
+</html>

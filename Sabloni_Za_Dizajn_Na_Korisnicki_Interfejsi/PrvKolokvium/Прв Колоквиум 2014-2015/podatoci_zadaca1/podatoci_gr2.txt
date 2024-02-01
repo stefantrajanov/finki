@@ -1,0 +1,32 @@
+﻿Медицина
+	MedIm
+	MedIA
+	FINKI-Med
+Образование
+	FINKI-Edu
+	Edu-Buddy
+	FINKI-LE
+	FINKI-Math
+Сметководство
+	eTax
+	FINKI-Tax
+	Tax-All
+	mySalary
+Игри
+	FINKI-game
+	Grelima
+	Edaolith
+	Foessa
+	Jeroen
+Тим
+	Алберт Ајнштајн
+	Ален Тјуринг
+	Архимед
+Претставништва
+	Скопје
+	Прилеп
+	Велес
+Контакт
+	Ул. Есенска 24/5 1000 Скопје
+	+38921234567
+	finkiit@iaispit.com

@@ -1,0 +1,102 @@
+﻿<html>
+	<head>
+	<meta charset="utf-8">
+		<title>Prva zadaca</title>
+		<style>
+			#prvo{
+				display:inline;	
+				float:left;
+				margin: 20px;
+			}
+			#tim {
+				display:inline;
+				float:left;
+				margin: 20px;
+			}
+			#pretstavnistva {
+				display:inline;
+				float:left;
+				margin: 20px;
+			}
+			#tim p{
+				display:none;
+			}
+			#pretstavnistva p{
+				display:none;
+			}
+			#kontakt{
+				display:inline;
+				float:left;
+				margin:20px;
+			}
+			#kontakt p{
+				display:none;
+			}
+		</style>
+		<script src="jquery\jquery.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#tim").click(function(){
+					$("#tim p").slideToggle();
+				});
+				$("#pretstavnistva").click(function(){
+					$("#pretstavnistva p").slideToggle();
+				});
+				$("#kontakt").click(function(){
+					$("#kontakt p").slideToggle();
+				});
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<div id="prvo">
+		<h><strong>Медицина</strong></h>
+		<p>MedIm</p>
+		<p>MedIA</p>
+		<p>Finki-Med</p>
+		</div>
+		<div id="prvo">
+		<h><strong>Образование</strong></h>
+		<p>FINKI-Edu</p>
+		<p>FINKI-Buddy</p>
+		<p>Finki-LE</p>
+		<p>Finki-math</p>
+		</div>
+		<div id="prvo">
+		<h><strong>Сметководство</strong></h>
+		<p>eTax</p>
+		<p>FINKI-Tax</p>
+		<p>Tax-All</p>
+		<p>mySalary</p>
+		</div>
+		<div id="prvo">
+		<h><strong>Игри</strong></h>
+		<p>FINKI-Game</p>
+		<p>Grelima</p>
+		<p>Edoalith</p>
+		<p>Foessa</p>
+		<p>Jeroen</p>
+		</div>
+		<div id="tim">
+		<h><strong>Тим</strong></h>
+		<p>Алберт Ајнштајн </p>
+		<p>Ален Тјуринг</p>
+		<p>Архимед</p>
+		</div>
+		<div id="pretstavnistva">
+		<h><strong>Претсавништва</strong></h>
+		<p>Скопје</p>
+		<p>Прилеп</p>
+		<p>Велес</p>
+		</div>
+		<div id="kontakt">
+		<h><strong>Контакт</strong></h>
+		<p>Ул. Есенска 24/5 1000 Скопје</p>
+		<p>+38921234567</p>
+		<p>finkiit@iaispit.com</p>
+		</div>
+		
+	</body>
+</html>

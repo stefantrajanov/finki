@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> Колоквиумска Решение</title>
+        <meta author="Jovica Veljanoski" />
+        <script type="text/javascript" src="jquery/jquery.js"></script>
+        <script type="text/javascript" src="jquery/jquery-ui.js"></script>
+        <style>
+        
+            ul {
+                text-align: center;
+                color: azure;
+            }
+            li {
+                background: aqua;
+                width: 180px;
+                height: 40px;
+                display: inline-block;
+                list-style: none;
+                padding-top: 8px
+            }
+            a {
+                text-decoration: none;
+                font-size: 30px;
+            }
+            li:hover {
+                border: 2px solid gray;
+            }
+            #curr , #Arch , #upcom {
+               display: none;
+            }
+            #friends , #connect , #more {
+               display: none;
+            }
+            #br1 , #br2 , #br3 {
+                font-weight: bold;
+                font-size: 24px;
+            }
+        </style>
+         <script>
+        
+            $( document ).ready(function() {
+               $("#lux1").hover(function() {
+                   $( "#curr" ).toggle();
+                });
+                $("#lux2").hover(function() {
+                   $( "#Arch" ).toggle();
+                });
+                $("#lux3").hover(function() {
+                   $( "#upcom" ).toggle();
+                });
+                 $("#br1").click(function(){
+                    $("#friends").show();
+                });
+                $("#br2").click(function(){
+                    $("#connect").show();
+                });
+                $("#br3").click(function(){
+                    $("#more").show();
+                });
+            });
+            
+            
+        </script>
+    </head>
+    <body>
+    <nav>
+        <ul>
+            <li id="lux1"><a href="#"> Current </a></li> 
+            <li id="lux2"><a href="#"> Archived </a></li>
+            <li id="lux3"><a href="#"> Upcoming </a></li>
+        </ul>
+    </nav>
+<div id="curr">   
+    <img src="podatoci_gr1\1_ml.png" />Stanford University <br>
+	Machine Learning <br><br>
+
+	<img src="podatoci_gr1\2_brain_icon.jpg" /> The Brain and Space <br>
+	Duke University<br><br>
+
+	<img src="podatoci_gr1\3_StatReason1.jpg" />Statistical Reasoning for Public Health 1: Estimation, Inference, & Interpretation<br>
+	Johns Hopkins University<br>
+</div>        
+        
+<div id="Arch">   
+    <img src="podatoci_gr1\4_fmri1.png" /> Johns Hopkins University<br>
+	Statistical Analysis of fMRI Data<br>
+
+	<img src="podatoci_gr1\5_mmds_logo2.png" />Stanford University<br>
+	Mining Massive Datasets<br>
+
+	<img src="podatoci_gr1\6_cn.png" />University of Washington<br>
+	Computational Neuroscience<br>
+
+	<img src="podatoci_gr1\7_Rprogramming.jpg" />Johns Hopkins University<br>
+	R Programming<br>
+
+</div>    
+        
+<div id="upcom">   
+    <img src="podatoci_gr1\8_statreasoning2.png" /> Johns Hopkins University<br>
+	Statistical Reasoning for Public Health 2: Regression Methods<br>
+
+    <img src="podatoci_gr1\9_clinicalneurologylogocropped.jpg" />University of California, San Francisco<br>
+	Introduction to Clinical Neurology<br>
+
+	<img src="podatoci_gr1\10_RegressionModels.jpg" />Johns Hopkins University<br>
+	Regression Models<br>
+
+	<img src="podatoci_gr1\11_fdivp.jpg" />Northwestern University<br>
+	Fundamentals of Digital Image and Video Processing<br>
+
+	<img src="podatoci_gr1\12_.png" />Duke University<br>
+	Image and video processing: From Mars to Hollywood with a stop at the hospital<br>
+
+</div>    
+ 
+        <div id="br1">Friends</div>
+              <div id="friends">
+                  Partners <br>
+                  Programs <br>
+	              Developers <br>
+                  Translate <br>
+                </div>
+         <div id="br2">Connect</div>
+             <div id="connect"> 
+                Google+<br>
+	            Twitter<br>
+	            Facebook<br>
+	            Blog<br>
+	            Tech Blog<br>
+        </div>
+         <div id="br3">More</div>
+             <div id="more"> 
+                Terms<br>
+	            Privacy<br>
+	            Help<br>
+	            Contact<br>
+
+        </div>
+        
+    </body>
+
+</html>

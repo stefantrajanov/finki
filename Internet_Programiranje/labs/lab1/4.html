@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		div{
+			display: flex;
+			justify-content: space-between;
+			width: 200px;
+			align-items: center;
+		}
+		input{
+			height: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p>Тежина (kg)</p>
+		<input type="text">
+	</div>
+	<div>
+		<p>Висина (cm)</p>
+		<input type="text">
+	</div>
+	<button onclick="calculateBMI()">Calculate</button>
+
+	<script>
+		function calculateBMI(){
+            var inputs = document.getElementsByTagName('input');
+
+            let mass = inputs[0].value;
+            let meters = parseInt(inputs[1].value) / 100;
+
+            alert('BMI: ' + mass/Math.pow(meters, 2));
+		}
+	</script>
+</body>
+</html>

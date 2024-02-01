@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+  <script>
+    let number = prompt('Vnesi 4 cifren broj');
+
+
+
+    if (isNaN(parseInt(number))){
+      alert('Ne moze da se proveri vneseniot broj');
+    }
+    else{
+      let reversed = number.split('').reverse().join('');
+      let sum = 0;
+      for (const num of number) {
+        sum += parseInt(num);
+      }
+
+      var isPalindrom = reversed == number;
+      var isDivisible = (parseInt(number) % sum) == 0;
+
+      if (isPalindrom && isDivisible){
+        alert('Palindrom e brojot, brojot e deliv so negovata suma')
+      }else if (isPalindrom && !isDivisible){
+        alert('Brojot e palindrom, brojot ne e deliv so negovata suma')
+      }else if (!isPalindrom && isDivisible){
+        alert('Brojot ne e palindrom, brojot e deliv so negovata suma')
+      }else{
+        alert('Brojot ne e palindrom, brojot ne e deliv so negovata suma')
+      }
+
+    }
+  </script>
+</body>
+</html>

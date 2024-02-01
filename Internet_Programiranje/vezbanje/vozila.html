@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vozila</title>
+	<style>
+		.input{
+			display: flex;
+            width: 300px;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.receipt{
+			display: inline-block;
+			padding: 15px;
+			width: 140px;
+			height: 170px;
+			background-color: red;
+			border: 2px solid black;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="input">
+		<p>Име</p>
+		<input type="text">
+	</div>
+	<div class="input">
+		<p>Презиме</p>
+		<input type="text">
+	</div>
+	<div class="input">
+		<p>Регистарска таблица</p>
+		<input type="text">
+	</div>
+	<div class="input">
+		<p>Години на старост</p>
+		<input type="text">
+	</div>
+	<div class="input">
+		<p>Сообраќајна незгода</p>
+		<form>
+			<input class="crash" name="crash" value="yes" type="radio">
+			<label>Да</label>
+			<input class="crash" name="crash" value="no" type="radio">
+			<label>Не</label>
+		</form>
+	</div>
+
+	<button onclick="generate_receipt()">Генерирај сметка</button>
+	<h2><strong>Сметки</strong></h2>
+	<p>Вкупно сметки за плаќање: 0</p>
+
+	<div class="receipt">
+		<p>Никола Николов</p>
+		<p>SN-1392-AB</p>
+		<p>Сообраќајки: Нема</p>
+		<p>Старост на возило: 35</p>
+		<p>За плаќањае: 3000</p>
+		<button>Плати</button>
+		<button>Избриши</button>
+	</div>
+	<div id="target"></div>
+
+	<script>
+		function checkIfFilled(inputs, radioInput){
+            for (const input of inputs) {
+	            if (input.value == ''){
+                    return false;
+	            }
+            }
+
+            if (radioInput == ''){
+                return false;
+            }
+
+            return true;
+		}
+
+        function resetInputs(inputs, radioInputs){
+            for (let i = 0; i < inputs.length - 2; i++) {
+                inputs[i].value = '';
+            }
+
+            for (const input of radioInputs) {
+	            input.checked = false;
+            }
+        }
+
+        function checkLicensePlate(plate){
+            var regex = /^[A-Z]{2}-\d{4}-[A-Z]{2}$/;
+
+            return regex.test(plate);
+        }
+
+        function calculatePrice(plate, crash){
+            let price = 3000;
+
+            let flag = false;
+            plate = plate.split('-');
+            for (let i = 0; i < plate[1].length; i++) {
+                if (plate[1][0] != plate[1][i]){
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (!flag){
+                price += 1000;
+            }
+
+
+            if (crash){
+                price += 500;
+            }
+
+            return price;
+        }
+
+        function pay_receipt(button){
+            var children = button.parentElement.children;
+	        children[5].setAttribute('disabled', '');
+	        children[6].setAttribute('disabled', '');
+        }
+
+        function delete_the_card(button){
+            var parent = button.parentElement;
+            parent.remove();
+        }
+		function generate_receipt(){
+            var inputs = document.getElementsByTagName('input');
+            var radioInputs = document.getElementsByClassName('crash');
+            var radioInput = '';
+            console.log(radioInput)
+            for (const radioInputElement of radioInputs) {
+	            if (radioInputElement.checked){
+                    radioInput = radioInputElement.value;
+                    break;
+	            }
+            }
+            let crash = radioInput == 'yes';
+
+            if (!checkIfFilled(inputs, radioInput)){
+                alert('Potpolnete gi site polinja')
+                return;
+            }
+            if (!checkLicensePlate(inputs[2].value)){
+                alert('Tablicata ne e vo soodveten format')
+                return
+            }
+
+            let price = calculatePrice(inputs[2].value, crash);
+
+            var newReceipt = document.createElement('div')
+			newReceipt.setAttribute('class', 'receipt');
+
+            let forCrash = crash ? 'Има' : 'Нема';
+            newReceipt.style.backgroundColor = parseInt(inputs[3].value) > 30 ? 'red' : 'green';
+            newReceipt.innerHTML =
+	            `
+	            <p>${inputs[0].value + ' ' + inputs[1].value}</p>
+				<p>${inputs[2].value}</p>
+				<p>Сообраќајки: ${forCrash}</p>
+				<p>Старост на возило: ${inputs[3].value}</p>
+				<p>За плаќањае: ${price}</p>
+				<button onclick="pay_receipt(this)">Плати</button>
+				<button onclick="delete_the_card(this)">Избриши</button>
+	            `
+
+			var target = document.getElementById('target')
+
+			target.parentNode.insertBefore(newReceipt, target);
+            resetInputs(inputs, radioInputs);
+		}
+	</script>
+</body>
+</html>

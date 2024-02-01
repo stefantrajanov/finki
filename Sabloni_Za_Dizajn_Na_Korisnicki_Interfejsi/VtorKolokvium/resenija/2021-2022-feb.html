@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="../jquery/jquery-ui.css">
+	<script src="../jquery/jquery.js"></script>
+	<script src="../jquery/jquery-ui.js"></script>
+
+	<style>
+        button{
+            width: 200px;
+	        font-size: 30px;
+	        margin: 20px;
+        }
+
+        ul {
+	        font-size: 20px;
+        }
+
+        li {
+	        cursor: pointer;
+        }
+	</style>
+</head>
+<body>
+	<div id="main">
+		<button id="pa192">Paris</button>
+		<button id="ch7956">Chicago</button>
+		<button id="at5702">Athens</button>
+		<button id="am22265">Amsterdam</button>
+	</div>
+
+	<ul id="details">
+
+	</ul>
+
+	<button id="goBack">Back</button>
+	<div id="landmarkDetails">
+
+	</div>
+
+	<script>
+		$(document).ready(function (){
+            $('#goBack').hide();
+
+            $('#goBack').click(function (){
+                $('#landmarkDetails').hide();
+                $('#details').show();
+                $('#goBack').hide();
+            })
+
+            $("#main button").click(function (){
+                $('#details').html('');
+                let id = $(this).attr('id');
+                $.ajax({
+	                url: `http://localhost:3000/${id}`,
+	                method: "GET",
+	                dataType: 'json',
+	                success: function (data){
+                       $.each(data.objects.available.landmarks, function (index, item){
+                           var newListItem = $("<li>");
+
+                           newListItem.html(
+                               `${item.name}`
+                           )
+
+	                       newListItem.click(function (){
+                               $('#goBack').show();
+                               $('#landmarkDetails').html('');
+                               $('#landmarkDetails').show();
+                               $('#details').hide();
+                               var detail = $('<ul>');
+
+                               detail.html(
+                                   `
+                                   <li>${item.address}</li>
+                                   <li>${item.ticket_price}</li>
+                                   <li>${item.business_hours}</li>
+                                   <li>${item.url}</li>
+                                   `)
+
+		                       $('#landmarkDetails').append(detail);
+	                       })
+
+
+
+	                       $('#details').append(newListItem);
+                       })
+	                },
+	                error: function (error, status, xhr){
+                        console.log(error)
+	                }
+                })
+            })
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="../jquery/jquery-ui.css">
+	<script src="../jquery/jquery.js"></script>
+	<script src="../jquery/jquery-ui.js"></script>
+
+	<style>
+		#poster{
+            display: flex;
+			justify-content: end;
+		}
+		#poster img{
+			width: 200px;
+		}
+
+		#right li{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div>
+		<span id="get">
+			<h1> IA EXAM </h1>
+			<input type="text" id="searchTerm"/>
+			<button id="search">Get</button>
+		</span>
+		</div>
+		<div class="container">
+			<strong>Current movies</strong>
+			<br>
+			<ul id="movies">
+
+			</ul>
+		</div>
+		<div id="right" class="container">
+			<strong>Drop a movie here to delete it</strong>
+			<br>
+		</div>
+		
+		<div id="poster">
+			<img src="" alt="">
+		</div>
+	</div>
+	<script>
+		$(document).ready(function (){
+            var autoComplete = ["Kingsman", "Tomorrowland", "Jurassic World", "San Andreas Quake", "Survivor",
+                "Ex Machina", "Focus", "Blackhat", "Chappie", "Fury", "Big Hero 6", "Predestination",
+                "Gone Girl", "Jupiter Ascending", "John Wick", "Seventh Son", "Lucy", "American Sniper"
+            ];
+            $('#searchTerm').autocomplete({
+                source: autoComplete
+            })
+
+			$('#search').click(function (){
+                let movie = document.getElementById('searchTerm').value;
+
+                $.ajax({
+	                url:`https://omdbapi.com/?t=${movie}&apikey=8d2b486b`,
+	                method: 'GET',
+	                dataType:'json',
+	                success: function (data){
+                        let item = $('<li>');
+                        item.html(`${data.Title}`)
+		                var genre = data.Genre;
+                        if (genre.replaceAll(',', '').split(' ').includes('Comedy')){
+                            item.css('color', 'red');
+                        }
+
+                        item.click(function (){
+                            $('#poster img').attr('src', data.Poster);
+                        })
+
+		                let toolTipContent =
+			                `
+			                Title: ${data.Title}
+			                Director: ${data.Director}
+			                Actors: ${data.Actors}
+			                Raiting: ${data.imdbRating}
+			                Genre: ${data.Genre}
+			                `
+
+		                // item.tooltip({
+                        //     content: toolTipContent,
+			            //     // enable: true
+		                // })
+
+                        item.attr('title', toolTipContent);
+
+                        // Initialize the tooltip
+                        item.tooltip();
+
+
+
+		                $('#movies').append(item);
+	                },
+	                error: function (error, status, xhr){
+
+	                }
+                })
+
+
+			})
+
+            $('#movies').sortable({
+	            connectWith: '#right'
+            }).disableSelection();
+
+            $('#right').sortable({}).disableSelection();
+
+		})
+	</script>
+</body>
+</html>

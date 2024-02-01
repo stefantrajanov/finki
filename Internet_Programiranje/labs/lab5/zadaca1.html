@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zadaca1</title>
+</head>
+<body>
+	<h1>Калкулатор</h1>
+	<div>
+		<div style="text-align:left; float:left">
+			<p>а <input id="a" style="width:15px"/> b <input id="b" style="width:15px"/>
+			</p>
+			<p>
+				<input id="plus" type="radio" name="oper" checked>a+b
+				<input id="minus" type="radio" name="oper">a-b
+				<input id="mnoz" type="radio" name="oper">a*b
+				<input id="del" type="radio" name="oper">a/b
+				<br>
+				<input id="sin" type="radio" name="oper">sin(a)
+				<input id="cos" type="radio" name="oper">cos(a)
+				<input id="tg" type="radio" name="oper">tg(a)
+				<br>
+				<input id="cel" type="radio" name="oper">[a]
+				<input id="stepen" type="radio" name="oper">a<sup>b</sup>
+				<input id="koren" type="radio" name="oper">&radic;<span style="text-decoration: overline">a</span>
+			</p>
+			<button onclick="calculate()">Пресметај</button>
+			<p id="rezultat"></p>
+		</div>
+	</div>
+	<br/>
+	<script>
+        function calculate() {
+            let a = parseFloat(document.getElementById('a').value);
+            let b = parseFloat(document.getElementById('b').value);
+
+            let radios = document.getElementsByName('oper');
+
+            let operation = '';
+            for (let radio of radios) {
+                if (radio.checked) {
+                    operation = radio.id;
+                }
+            }
+            let result = 0;
+            switch (operation) {
+                case "plus":
+                    result = a + b;
+                    break;
+                case "minus":
+                    result = a - b;
+                    break;
+                case "mnoz":
+                    result = a * b;
+                    break;
+                case "del":
+                    result = a / b;
+                    break;
+	            case "sin":
+                    result = Math.sin(a);
+                    break;
+	            case "cos":
+                    result = Math.cos(a);
+                    break;
+	            case "tg":
+                    result = Math.tan(a);
+                    break;
+	            case "cel":
+                    result = Math.round(a);
+                    break;
+	            case "stepen":
+                    result = Math.pow(a, b);
+                    break;
+	            case "koren":
+                    result = Math.sqrt(a);
+                    break;
+            }
+
+            document.getElementById('rezultat').innerHTML = result.toString();
+        }
+	</script>
+</body>
+</html>

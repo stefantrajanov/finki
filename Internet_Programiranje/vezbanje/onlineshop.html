@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shop</title>
+
+	<style>
+		.input{
+			display: flex;
+			width: 400px;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.input input{
+			width: 200px;
+		}
+
+		.input select{
+            width: 210px;
+			text-align: center;
+		}
+		h1 {
+            width: 800px;
+			text-align: center;
+		}
+
+		table{
+			border: 2px solid black;
+			border-collapse: collapse;
+		}
+
+		td {
+			border: 2px solid black;
+			padding: 5px;
+			width: 50px;
+            text-align: center;
+		}
+
+		.table{
+			display: flex;
+		}
+
+		.table div{
+            margin: 20px;
+		}
+
+		tr:first-of-type{
+			font-weight: bold;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Online shop</h1>
+	<div class="input">
+		<p>Name and Surname</p>
+		<input type="text"/>
+	</div>
+	<div class="input">
+		<p>Item</p>
+		<input type="text"/>
+	</div>
+	<div class="input">
+		<p>Item code</p>
+		<input type="text"/>
+	</div>
+	<div class="input">
+		<p>Item description</p>
+		<input type="text"/>
+	</div>
+	<div class="input">
+		<p>Price</p>
+		<input type="text"/>
+	</div>
+	<div class="input">
+		<p>Used</p>
+		<select id="select">
+			<option value="default" selected>-</option>
+			<option value="used">used</option>
+			<option value="never-used">never-used</option>
+		</select>
+	</div>
+	<button onclick="add()">Add</button>
+
+	<p id="active">Active items: 0</p>
+
+	<div class="table">
+		<div>
+
+			<h2>Unused Items</h2>
+			<table>
+				<tr><td>Name</td><td>Item</td><td>Price</td><td>Code</td><td>Number</td><td>Action</td></tr>
+				<tr id="targetNotUsed"></tr>
+			</table>
+		</div>
+		<div>
+
+			<h2>Used Items</h2>
+			<table>
+				<tr><td>Name</td><td>Item</td><td>Price</td><td>Code</td><td>Number</td><td>Action</td></tr>
+				<tr id="targetUsed"></tr>
+			</table>
+		</div>
+
+	</div>
+
+	<script>
+		let numberOfActive = 0;
+		function checkIfFilled(inputs, select){
+            for (const input of inputs) {
+	            if (input.value == ''){
+                    return false;
+	            }
+            }
+            if (select == 'default'){
+                return false;
+            }
+
+            return true;
+		}
+
+        function formatTheCode(code){
+            code = code.replaceAll('!', '');
+            code = code.replaceAll('1', '');
+            code = code.replaceAll('2', '');
+            code = code.replaceAll('3', '');
+            code = code.replaceAll('4', '');
+            code = code.replaceAll('5', '');
+            code = code.replaceAll('6', '');
+            code = code.replaceAll('7', '');
+            code = code.replaceAll('8', '');
+            code = code.replaceAll('9', '');
+
+            return code;
+        }
+
+        function sold(button){
+            var parent = button.parentElement.parentElement;
+            parent.style.backgroundColor = 'yellow';
+            button.remove();
+
+            numberOfActive--;
+            document.getElementById('active').innerHTML = `Active items: ${numberOfActive}`
+        }
+		function add(){
+            var inputs = document.getElementsByTagName('input');
+            var selectInput = document.getElementById('select').value;
+
+            if (!checkIfFilled(inputs, selectInput)){
+                alert('Potpolnite gi site polinja!');
+                return;
+            }
+
+            if (parseInt(inputs[4].value) <= 0 || isNaN(parseInt(inputs[4].value))){
+                alert('Cenata mora da bide pogolema od 0!');
+                return;
+            }
+            var check = document.getElementById(inputs[2].value)
+
+			if (check){
+                alert('Vekje postoj oglas so toj kod');
+                return;
+			}
+
+
+            let dummy = parseInt(inputs[4].value);
+            let price = Math.round(dummy * 1.10);
+            let formatedCode = formatTheCode(inputs[2].value);
+
+            var newOglas = document.createElement('tr');
+            newOglas.innerHTML =
+	            `
+	            <tr>
+	            <td>${inputs[0].value}</td>
+	            <td>${inputs[1].value}</td>
+	            <td>${price}</td>
+	            <td>${inputs[2].value}</td>
+	            <td>${formatedCode}</td>
+	            <td><button onclick="sold(this)">Sold</button></td>
+	            </tr>
+	            `
+			newOglas.id = inputs[2].value;
+
+			let whereToAdd = selectInput == 'used' ? 'targetUsed' : 'targetNotUsed';
+
+            var target = document.getElementById(whereToAdd);
+
+            target.parentNode.insertBefore(newOglas, target);
+            numberOfActive++;
+            document.getElementById('active').innerHTML = `Active items: ${numberOfActive}`
+		}
+	</script>
+</body>
+</html>

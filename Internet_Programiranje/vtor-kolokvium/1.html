@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*#square {*/
+        /*    !*position: absolute;*!*/
+        /*    !*top: 50%;*!*/
+        /*    left: 0; !* Initial position at the start of the page *!*/
+        /*    !*transform: translate(-50%);*!*/
+        /*    background-color: #f0f0f0;*/
+        /*    !*padding: 10px;*!*/
+        /*    transition: left 0.5s ease; !* Add smooth transition effect *!*/
+        /*}*/
+
+        #target {
+            color: blue;
+            /*width: 100px;*/
+            height: 100px;
+            display: inline-block;
+        }
+
+        #square {
+            display: inline-block;
+        }
+	</style>
+</head>
+<body>
+	<div>
+		<button onclick="left()"> <</button>
+		<button onclick="right()"> ></button>
+	</div>
+	<div id="target"></div>
+	<div id="square"></div>
+	<script>
+        let json = [{
+            "background-color": "red",
+            "width": "100px",
+            "height": "100px"
+        },
+            {
+                "background-color": "green",
+                "width": "50px",
+                "height": "100px"
+            },
+            {
+                "background-color": "blue",
+                "width": "100px",
+                "height": "50px"
+            },
+        ];
+        let index = 0;
+
+        var square = document.getElementById('square');
+        square.style.backgroundColor = json[index]["background-color"];
+        square.style.width = json[index]["width"];
+        square.style.height = json[index]["height"];
+
+        let currentPush = 0;
+
+        function right() {
+            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var target = document.getElementById('target');
+            currentPush += 150;
+
+            if (currentPush >= width){
+                currentPush = 0;
+                index++;
+
+                if (index >= json.length){
+                    index = 0;
+                }
+                square.style.backgroundColor = json[index]["background-color"];
+                square.style.width = json[index]["width"];
+                square.style.height = json[index]["height"];
+            }
+
+            target.style.width = `${currentPush}px`;
+
+        }
+
+        function left() {
+            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var target = document.getElementById('target');
+            currentPush -= 150;
+            if (currentPush <= 0){
+                currentPush = width-150;
+                index--;
+
+                if (index < 0){
+                    index = 2;
+                }
+                square.style.backgroundColor = json[index]["background-color"];
+                square.style.width = json[index]["width"];
+                square.style.height = json[index]["height"];
+            }
+
+            target.style.width = `${currentPush}px`;
+        }
+	</script>
+</body>
+</html>

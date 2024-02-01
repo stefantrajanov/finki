@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prva</title>
+  <link rel="stylesheet" href="../jquery/jquery-ui.css">
+  <script src="../jquery/jquery.js"></script>
+  <script src="../jquery/jquery-ui.js"></script>
+</head>
+<style>
+	#cities, #details, #favorites{
+		margin: 20px;
+		border: 2px solid black;
+        width: 500px;
+	}
+
+	li {
+		cursor: pointer;
+		color: black;
+	}
+
+	p {
+		cursor: move;
+	}
+
+	#details, #favorites{
+		min-width: 500px;
+		min-height: 100px;
+	}
+</style>
+<body>
+	<div id="cities">
+		<ul>
+			<li id="sk442">Skopje</li>
+			<li id="bg3164">Beograd</li>
+			<li id="zg73">Zagreb</li>
+			<li id="sr49316">Saraevo</li>
+			<li id="lj431">Ljubljana</li>
+			<li id="ti1212">Titograd</li>
+		</ul>
+	</div>
+
+	<div id="details">
+
+	</div>
+
+	<div id="favorites">
+
+	</div>
+
+
+  <script>
+    $(document).ready(function (){
+        $("#cities li").click(function (){
+            var id = $(this).attr('id');
+            $.ajax({
+                url:"http://localhost:3000/" + id,
+	            method: 'GET',
+                dataType: "json",
+	            success: function (data){
+                    $('#details').html('');
+                    $.each(data.objects.stores, function (i, item){
+                        var newDiv = $('<div>');
+                        var newListItem = $('<p>');
+			            newListItem.html(item.storeName + " " + item.region);
+                        var newAccordion = $('<ul>');
+
+                        newAccordion.html
+                        (`
+                            <li>${item.openHours}</li>
+                            <li>${item.address}</li>
+                            <li>${item.phone}</li>
+                        `)
+
+                        newDiv.append(newListItem);
+                        newDiv.append(newAccordion);
+
+                        $('#details').append(newDiv);
+		            })
+
+		            $('#details ul').hide();
+                    $('#details p').click(function (){
+                        $(this).siblings('ul').slideToggle(200);
+                    })
+	            },
+	            error: function (error){
+                    console.log(error);
+	            }
+            })
+        })
+
+	    $('#details').sortable({
+		    connectWith: '#favorites'
+	    }).disableSelection()
+
+	    $('#favorites').sortable({
+		    connectWith: '#details'
+	    }).disableSelection()
+    })
+  </script>
+</body>
+</html>

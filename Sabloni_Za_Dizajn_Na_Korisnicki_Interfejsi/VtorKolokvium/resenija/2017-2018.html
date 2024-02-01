@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="../jquery/jquery-ui.css">
+	<script src="../jquery/jquery.js"></script>
+	<script src="../jquery/jquery-ui.js"></script>
+
+	<style>
+        body {
+            display: flex;
+        }
+
+        ul {
+            border: 2px solid black;
+            margin: 20px;
+            display: inline-block;
+            min-width: 100px;
+            /*min-height: 500px;*/
+        }
+
+        li {
+            cursor: pointer;
+        }
+	</style>
+</head>
+<body>
+	<ul id="2016">
+
+	</ul>
+	<ul id="2017">
+
+	</ul>
+	<ul id="favorites">
+
+	</ul>
+
+	<ul id="details">
+
+	</ul>
+
+	<script>
+        $(document).ready(function () {
+            $.ajax({
+                url: `http://ergast.com/api/f1/2016/drivers.json`,
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $.each(data.MRData.DriverTable.Drivers, function (i, item) {
+                        // console.log(item.givenName + " " + item.familyName)
+
+                        var newElement = $('<li>');
+                        newElement.html(`${item.givenName} ${item.familyName}`)
+                        newElement.click(function (){
+                            $('#details').html(
+                                `
+                                <li>${item.permanentNumber}</li>
+                                <li>${item.dateOfBirth}</li>
+                                <li>${item.nationality}</li>
+                                <li><a href="${item.permanentNumber}">BIO</a></li>
+                                `
+                            )
+                        })
+
+                        $('#2016').append(newElement);
+                    })
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+
+            $.ajax({
+                url: `http://ergast.com/api/f1/2017/drivers.json`,
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $.each(data.MRData.DriverTable.Drivers, function (i, item) {
+                        // console.log(item.givenName + " " + item.familyName)
+
+                        var newElement = $('<li>');
+                        newElement.html(`${item.givenName} ${item.familyName}`)
+	                    newElement.click(function (){
+                            $('#details').html(
+                                `
+                                <li>${item.permanentNumber}</li>
+                                <li>${item.dateOfBirth}</li>
+                                <li>${item.nationality}</li>
+                                <li><a href="${item.permanentNumber}">BIO</a></li>
+                                `
+                            )
+	                    })
+
+                        $('#2017').append(newElement);
+                    })
+                    // $('li').click(function (){
+                    //     console.log('rabote')
+                    // })
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+
+            $('#2016').sortable({
+                connectWith: "#favorites"
+            }).disableSelection()
+
+            $('#2017').sortable({
+                connectWith: "#favorites"
+            }).disableSelection()
+
+            $('#favorites').sortable({
+                connectWith: "#2016, #2017"
+            }).disableSelection();
+
+
+
+        })
+
+
+	</script>
+</body>
+</html>

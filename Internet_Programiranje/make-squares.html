@@ -1,0 +1,59 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input id="values" type="text"/>
+	<button onclick="addElement()">Постави</button>
+	<div id="target"></div>
+
+	<script>
+		function checkIfValidInput(input){
+            let pattern = /^[a-z],\d,\d$/;
+            let test = RegExp;
+		}
+		function addElement(){
+            let values = document.getElementById('values').value;
+            values = values.split(',');
+
+            let color = values[0];
+            let width = values[1];
+            let height = values[2];
+            let text = values[3];
+
+            let resultText = '';
+
+            for (let i = 0; i < text.length; i++) {
+	            if (i == 0){
+                    resultText+=text[i];
+                    continue;
+	            }
+                let letter = '';
+
+                if (i % 2 == 0){
+                    letter = text[i].toLowerCase();
+                }else{
+                    letter = text[i].toUpperCase();
+                }
+
+                resultText+=letter;
+            }
+
+            let newDiv = document.createElement('div');
+            newDiv.innerHTML = `<p style="color: black; text-align: center">${resultText}</p>`;
+			newDiv.style.width = width;
+            newDiv.style.height = height;
+            newDiv.style.backgroundColor = color;
+
+            let target = document.getElementById('target');
+
+            target.parentNode.insertBefore(newDiv, target);
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+	<style>
+        .input-field {
+            display: flex;
+            justify-content: space-between;
+            width: 250px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 300px;
+            text-align: center;
+        }
+	</style>
+</head>
+<body>
+	<div class="input-field">
+		<label>Name</label>
+		<input type="text"/>
+	</div>
+	<div class="input-field">
+		<label>Surname</label>
+		<input type="text"/>
+	</div>
+	<div class="input-field">
+		<label>Age</label>
+		<input type="text"/>
+	</div>
+	<div class="input-field">
+		<label>Code</label>
+		<input type="text"/>
+	</div>
+	<div class="input-field">
+		<label>Gender</label>
+		<select name="gender" id="gender">
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+		</select>
+	</div>
+
+	<div style="text-align: end; width: 250px;">
+		<button onclick="add_student()" style="padding: 2px; margin-bottom: 10px;">Add</button>
+	</div>
+
+	<table border="1">
+		<tr>
+			<td>Name</td>
+			<td>Surname</td>
+			<td>Tag</td>
+			<td>Options</td>
+		</tr>
+		<tr>
+			<td>Stevo</td>
+			<td>Trajanov</td>
+			<td>1234asd8</td>
+			<td>
+				<button>Accept</button>
+				<button>Reject</button>
+			</td>
+		</tr>
+		<tr id="target"></tr>
+
+	</table>
+
+	<h2 id="acceptedStudents">Total accepted students: 0</h2>
+
+	<script>
+        function reset(inputs) {
+            for (const input of inputs) {
+                input.value = ""
+            }
+        }
+
+        function add_student() {
+            var inputs = document.getElementsByTagName("input");
+
+            let name = inputs[0].value;
+            let surname = inputs[1].value;
+            let age = inputs[2].value;
+            let code = inputs[3].value;
+            let gender = document.getElementById('gender').value;
+
+            let tag = '';
+
+            for (var symbol of code) {
+                if (isNaN(parseInt(symbol))) {
+                    if (symbol == symbol.toUpperCase()) {
+                        tag += symbol.toLowerCase();
+                    } else {
+                        tag += symbol.toUpperCase()
+                    }
+                } else {
+                    if (parseInt(symbol) >= 5) {
+                        tag += symbol;
+                    }
+                }
+            }
+            var target = document.getElementById('target');
+
+            var underaged = age < 18 ? 'disabled' : '';
+            var color = gender == 'male' ? 'blue' : 'red';
+
+	        var newStudent = document.createElement('tr');
+            newStudent.style.backgroundColor = color;
+	        newStudent.innerHTML =
+		        `
+			        <td>${name}</td>
+					<td>${surname}</td>
+					<td>${tag}</td>
+					<td>
+					<button onclick="accept_student(this)" ${underaged}>Accept</button>
+					<button onclick="reject_student(this)" ${underaged}>Reject</button>
+					</td>
+		        `;
+
+            target.parentNode.insertBefore(newStudent, target);
+
+
+            reset(inputs);
+        }
+
+        let counter = 0;
+        function accept_student(button){
+            var children = button.parentElement.children;
+
+            for (let child of children) {
+	            child.setAttribute('disabled', '');
+            }
+            counter++;
+            document.getElementById('acceptedStudents').innerHTML =`Accepted students: ${counter}`
+        }
+
+        function reject_student(button){
+            button.parentElement.parentElement.remove();
+        }
+	</script>
+</body>
+</html>

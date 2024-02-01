@@ -1,0 +1,5 @@
+API за овие задачи повеќето не работат, за да можеш да пробуеш со API потребно е да инсталираш json server за симулација на API.
+
+
+-> https://github.com/typicode/json-server
+-> https://www.npmjs.com/package/json-server

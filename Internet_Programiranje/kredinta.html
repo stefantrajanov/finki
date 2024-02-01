@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<input id="input" type="text">
+	<button onclick="left_shift()"> < </button>
+	<button onclick="right_shift()"> > </button>
+	<button onclick="validate_card()"> Validate</button>
+
+	<script>
+		function left_shift(){
+            let input = document.getElementById('input').value;
+            let trimmed = input.split('-');
+
+            let newCard = trimmed[1] + '-' + trimmed[2] + '-' + trimmed[3] + '-' + trimmed[0];
+
+            document.getElementById('input').value = newCard;
+		}
+        function right_shift(){
+            let input = document.getElementById('input').value;
+            let trimmed = input.split('-');
+
+            let newCard = trimmed[3] + '-' + trimmed[0] + '-' + trimmed[1] + '-' + trimmed[2];
+
+            document.getElementById('input').value = newCard;
+        }
+        function validate_card(){
+            let input = document.getElementById('input').value;
+
+            let trimmed = input.split('-').join('');
+
+            let counter = 0;
+            for (let i = 0; i < trimmed.length; i++) {
+                var currentNumber = trimmed[i];
+                var flag = false;
+                for (let j = 0; j < trimmed.length; j++) {
+                    if (currentNumber == trimmed[j] && i != j){
+                        flag = true;
+                        break;
+                    }
+                }
+	            if (!flag){
+                    counter++;
+	            }
+            }
+            if (counter >= 5){
+               alert('valid');
+            }
+
+            alert('invalid');
+        }
+	</script>
+</body>
+</html>

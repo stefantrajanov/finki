@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		.input-field {
+			display: flex;
+			justify-content: space-between;
+			width: 300px;
+			margin-bottom: 10px;
+		}
+		.card{
+			border: solid 1px black;
+			color: black;
+            width: 120px;
+			padding: 20px;
+			margin-right: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="input-field">
+		<span>Име: </span>
+		<input type="text" id="name"/>
+	</div>
+	<div class="input-field">
+		<span>Презиме: </span>
+		<input type="text" id="surname"/>
+	</div>
+	<div class="input-field">
+		<span>Регистарска таблица: </span>
+		<input type="text" id="plate"/>
+	</div >
+	<div class="input-field">
+		<span>Години на старост </span>
+		<input type="text" id="year"/>
+	</div>
+	<div class="input-field">
+		<span>Сообраќајна незгода</span>
+		<form id="crashForm">
+
+			<input type="radio" name="crash" value="yes" id="yesCarCrash"/>
+			<label for="yesCarCrash">Да</label>
+
+			<input type="radio" name="crash" value="no" id="noCarCrash"/>
+			<label for="noCarCrash">Не</label>
+		</form>
+	</div>
+
+	<button onclick="generate()">Генирирај сметка</button>
+
+	<h3><strong>Сметки</strong></h3>
+	<p id="counter">Вкупно сметки за плаќање: 0</p>
+
+	<div style="display: flex">
+		<div id="target"></div>
+	</div>
+	<script>
+
+		function reset(name, surname, plate, year, crashForm){
+            name.value = '';
+            surname.value = '';
+            plate.value = '';
+            year.value = '';
+            crashForm.reset();
+		}
+
+        function checkIfFilledOut(name, surname, plate, year, crashForm){
+            if (name.value == '' || surname.value == '' || plate.value == '' || year.value == '' || crashForm.value
+	            == ''){
+                alert('Ne se vneseni site podatoci');
+                return false;
+            }
+
+            return true;
+        }
+
+        function checkIfValidPlate(plateInput){
+            var regex = /^[A-Z]{2}-\d{4}-[A-Z]{2}$/;
+
+            if (regex.test(plateInput.value)){
+                return true;
+            }else{
+                alert('Ne validna registarska tablica');
+                return false;
+            }
+        }
+
+        function getPrice(plate){
+            let price = 3000;
+
+            var splited = plate.split('-');
+
+            var numbers = splited[1];
+
+            let last = numbers[0];
+            let flag = false
+            for (let i = 0; i < numbers.length; i++) {
+	            if (last != numbers[i]){
+                    flag = true;
+                    break;
+	            }
+            }
+
+            if (!flag){
+                price += 1000;
+            }
+
+            var ifCarCrash = document.getElementById('yesCarCrash');
+            if (ifCarCrash.checked){
+                price += 500;
+            }
+
+            return price;
+        }
+        function delete_card(button){
+            var parent = button.parentElement;
+
+            parent.remove();
+        }
+
+        function pay(button){
+            var parent = button.parentElement;
+
+            console.log(parent.children);
+
+            parent.children[5].disabled = true;
+            parent.children[6].disabled = true;
+        }
+        let globalCounter = 0;
+		function generate(){
+            var nameInput = document.getElementById('name');
+            var surnameInput = document.getElementById('surname');
+            var plateInput = document.getElementById('plate');
+            var yearInput = document.getElementById('year');
+            var crashForm = document.getElementById('crashForm');
+
+            if (!checkIfFilledOut(nameInput,surnameInput,plateInput,yearInput,crashForm)){
+                return;
+            }
+            if (!checkIfValidPlate(plateInput)){
+                return;
+            }
+
+            let price = getPrice(plateInput.value);
+            console.log(price);
+
+            let backColor = parseInt(yearInput.value) > 30 ? 'red' : 'green';
+
+            var target = document.getElementById('target');
+
+            var newCard = document.createElement('div');
+            newCard.setAttribute('class', 'card');
+            newCard.style.backgroundColor = backColor;
+
+            newCard.innerHTML =
+	            `
+				<p>${nameInput.value + ' ' + surnameInput.value}</p>
+				<p>${plateInput.value}</p>
+				<p>Сообраќајки нема</p>
+				<p>Старост на возило ${yearInput.value}</p>
+				<p>За плаќање ${price}</p>
+				<button onclick="pay(this)">Плати</button>
+				<button onclick="delete_card(this)">Избриши</button>
+	            `;
+
+            target.parentNode.insertBefore(newCard, target.nextSibling);
+
+            globalCounter++;
+
+            document.getElementById('counter').innerHTML = `Вкупно сметки за плаќање: ${globalCounter}`;
+			reset(nameInput,surnameInput,plateInput,yearInput,crashForm);
+		}
+
+	</script>
+</body>
+</html>

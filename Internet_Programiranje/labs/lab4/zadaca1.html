@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zadaca1</title>
+	<style>
+        .input {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            align-items: center;
+        }
+
+        .button {
+            display: flex;
+            width: 200px;
+            justify-content: end;
+            margin-bottom: 20px;
+        }
+
+        td, table {
+            border: 1px solid black;
+        }
+
+        tr:first-of-type {
+            font-weight: bold;
+        }
+	</style>
+</head>
+<body>
+	<div class="input">
+		<p>Име</p>
+		<input type="text"/>
+	</div>
+	<div class="input">
+		<p>Презиме</p>
+		<input type="text"/>
+	</div>
+	<div class="input">
+		<p>Индекс</p>
+		<input type="text"/>
+	</div>
+	<div class="input">
+		<p>Предмет</p>
+		<input type="text"/>
+	</div>
+	<div class="input">
+		<p>Оцена</p>
+		<select id="select">
+			<option value="5" selected>5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select>
+	</div>
+	<div class="button">
+		<button onclick="add()">Внеси</button>
+	</div>
+	<table>
+		<tr>
+			<td>Име</td>
+			<td>Презиме</td>
+			<td>Индекс</td>
+			<td>Предмет</td>
+			<td>Оценка</td>
+		</tr>
+		<tr id="target"></tr>
+	</table>
+
+	<script>
+        entries = []
+
+        function clear(inputs) {
+            for (let input of inputs) {
+                input.value = "";
+            }
+        }
+
+        function filled(inputs) {
+            for (let input of inputs) {
+                if (input.value == "") {
+                    return false
+                }
+            }
+            return true;
+        }
+
+        function add() {
+            let inputs = document.getElementsByTagName('input');
+            let selectInput = document.getElementById('select');
+            if (!filled(inputs)) {
+                alert("Vnesete gi site vrednost")
+                return;
+            }
+
+            var newRow = document.createElement('tr');
+            newRow.innerHTML =
+                `
+	            <td>${inputs[0].value}</td>
+	            <td>${inputs[1].value}</td>
+	            <td>${inputs[2].value}</td>
+	            <td>${inputs[3].value}</td>
+	            <td>${selectInput.value}</td>
+	            `
+
+            var target = document.getElementById('target');
+
+            target.parentNode.insertBefore(newRow, target);
+
+            entries.push({name: inputs[0].value, surname: inputs[1].value, index: inputs[2].value, subject: inputs[3].value, grade:
+                selectInput.value})
+            clear(inputs)
+        }
+
+	</script>
+</body>
+</html>

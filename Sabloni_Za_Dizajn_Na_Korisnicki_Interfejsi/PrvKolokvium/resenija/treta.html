@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery-ui.js"></script>
+
+	<style>
+        .main {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .main > button {
+            font-size: 20px;
+            width: 200px;
+            height: 50px;
+            margin-right: 50px;
+        }
+
+        #back {
+            font-size: 20px;
+            width: 200px;
+            height: 50px;
+        }
+
+        #current-courses, #archived-courses, #upcoming-courses {
+            display: grid;
+	        justify-content: center;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            margin: 50px;
+            border: 2px solid black;
+            padding: 20px;
+        }
+        
+        .item:hover {
+            border: 2px solid blue;
+        }
+
+        .item-desc {
+            width: 300px;
+            margin-right: 20px;
+        }
+
+        .item img {
+            width: 300px;
+        }
+
+        ul{
+	        list-style: none;
+	        padding: 5px;
+        }
+
+        #groups{
+	        border: 2px solid black;
+	        position: fixed;
+            width: 150px;
+	        background-color: orange;
+	        overflow: auto;
+        }
+
+        .slider, .inner-slider{
+	        background-color: whitesmoke;
+	        width: 100%;
+	        font-size: 16px;
+            cursor: pointer;
+        }
+
+        .slider p {
+	        margin-left: 10px;
+	        font-size: 18px;
+	        font-weight: 600;
+        }
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<button id="current">Current</button>
+		<button id="archived">Archived</button>
+		<button id="upcoming">Upcoming</button>
+	</div>
+
+	<div id="groups">
+		<div class="slider">
+			<p>Friends</p>
+			<ul>
+				<li><a href="#">Partners</a></li>
+				<li><a href="#">Programs</a></li>
+				<li><a href="#">Developers</a></li>
+				<li><a href="#">Translate</a></li>
+			</ul>
+		</div>
+		<div class="slider">
+			<p>Connect</p>
+			<ul>
+				<li><a href="#">Google</a></li>
+				<li><a href="#">Facebook</a></li>
+				<li><a href="#">Twitter</a></li>
+				<li><a href="#">Blog</a></li>
+			</ul>
+		</div>
+		<div class="slider">
+			<p>More</p>
+			<ul>
+				<li><a href="#">Terms</a></li>
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+
+			<div class="inner-slider">
+				<p>TEST</p>
+				<ul>
+					<li><a href="#">Terms</a></li>
+					<li><a href="#">Privacy</a></li>
+					<li><a href="#">Help</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div id="current-courses">
+		<div class="item">
+			<div class="item-desc">
+				<h2>Stanford University</h2>
+				<p>Machine learning</p>
+			</div>
+			<img src="images-2015/1_ml.png"/>
+		</div>
+		<div class="item">
+			<div class="item-desc">
+				<h2>Duke University</h2>
+				<p>The Brain and Space</p>
+			</div>
+			<img src="images-2015/2_brain_icon.jpg" height="169" width="300"/>
+		</div>
+		<div class="item">
+			<div class="item-desc">
+				<h2>Johns Hopkins University</h2>
+				<p>Statistical Reasoning for Public Health 1: Estimation, Inference, & Interpretation</p>
+			</div>
+			<img src="images-2015/3_StatReason1.jpg" height="135" width="240"/>
+		</div>
+	</div>
+
+	<div id="archived-courses">
+		<div class="item">
+			<div class="item-desc">
+				<h2>Johns Hopkins University</h2>
+				<p>Statistical Analysis of fMRI Data</p>
+			</div>
+			<img src="images-2015/4_fmri1.png" height="254" width="451"/>
+		</div>
+		<div class="item">
+			<div class="item-desc">
+				<h2>Stanford University</h2>
+				<p>Mining Massive Datasets</p>
+			</div>
+			<img src="images-2015/5_mmds_logo2.png" height="169" width="300"/>
+		</div>
+		<div class="item">
+			<div class="item-desc">
+				<h2>University of Washington</h2>
+				<p>Computational Neuroscience</p>
+			</div>
+			<img src="images-2015/6_cn.png" height="169" width="300"/>
+		</div>
+		<div class="item">
+			<div class="item-desc">
+				<h2>Johns Hopkins University</h2>
+				<p>R programming</p>
+			</div>
+			<img src="images-2015/7_Rprogramming.jpg" height="169" width="300"/>
+		</div>
+	</div>
+
+	<div id="upcoming-courses">
+		<div class="item">
+			<div class="item-desc">
+				<h2>Johns Hopkins University</h2>
+				<p>Statistical Reasoning for Public Health 2: Regression Methods</p>
+			</div>
+			<img src="images-2015/8_statreasoning2.png" height="169" width="300"/>
+		</div>
+		<div class="item">
+			<div class="item-desc">
+				<h2>University of California, San Francisco</h2>
+				<p>Introduction to Clinical Neurology</p>
+			</div>
+			<img src="images-2015/9_clinicalneurologylogocropped.jpg" height="169" width="300"/>
+		</div>
+		<div class="item">
+			<div class="item-desc">
+				<h2>Johns Hopkins University</h2>
+				<p>Regression Models</p>
+			</div>
+			<img src="images-2015/10_RegressionModels.jpg" height="169" width="300"/>
+		</div>
+		<div class="item">
+			<div class="item-desc">
+				<h2>Northwestern University</h2>
+				<p>Fundamentals of Digital Image and Video Processing</p>
+			</div>
+			<img src="images-2015/11_fdivp.jpg" height="169" width="300"/>
+		</div>
+		<div class="item">
+			<div class="item-desc">
+				<h2>Duke University</h2>
+				<p>Image and video processing: From Mars to Hollywood with a stop at the hospital</p>
+			</div>
+			<img src="images-2015/12_.png" height="169" width="300"/>
+		</div>
+	</div>
+
+
+	<script>
+		$(document).ready(function (){
+            $('#current-courses, #archived-courses, #upcoming-courses').hide();
+            $('.slider > ul, .inner-slider').hide();
+            $('.inner-slider > ul').hide();
+
+            $('#current').click(function (){
+                $('#current-courses, #archived-courses, #upcoming-courses').hide();
+                $('#current-courses').show();
+            })
+            $('#archived').click(function (){
+                $('#current-courses, #archived-courses, #upcoming-courses').hide();
+                $('#archived-courses').show();
+            })
+            $('#upcoming').click(function (){
+                $('#current-courses, #archived-courses, #upcoming-courses').hide();
+                $('#upcoming-courses').show();
+            })
+			//
+			// $(".slider").accordion({
+			// 	active: true,
+			// 	collapsible: true,
+			// 	animate: 200,
+			// })
+
+			$(".slider p").click(function (){
+                $(this).siblings('ul').toggle(200);
+                $(this).siblings('.inner-slider').toggle(200);
+			})
+		})
+	</script>
+</body>
+</html>

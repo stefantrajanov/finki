@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zadaca2</title>
+</head>
+<body>
+	<script>
+        function remove_array_element(list, element){
+            for (let i = 0; i < list.length; i++) {
+                let currentElement = list[i];
+                if (currentElement == element){
+                    list.splice(i, 1);
+                    i--;
+                }
+            }
+
+            return list
+        }
+
+        console.log(remove_array_element([2, 5, 9, 6], 5));
+	</script>
+
+</body>
+</html>

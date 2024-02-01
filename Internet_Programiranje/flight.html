@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+        .input-element {
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+            align-items: center;
+            margin-bottom: -10px;
+        }
+
+        input {
+            height: 10px;
+        }
+
+        .card{
+          width: 200px;
+        }
+	</style>
+</head>
+<body>
+	<h1 style="text-align: center; width: 300px"><strong>Регистирај лет</strong></h1>
+	<div class="input-element">
+		<p>Име и презиме</p>
+		<input type="text"/>
+	</div>
+	<div class="input-element">
+		<p>Ознака на летало</p>
+		<input type="text"/>
+	</div>
+	<div class="input-element">
+		<p>Координати на лет</p>
+		<input type="text"/>
+	</div>
+	<div class="input-element">
+		<p>Радиус на лет</p>
+		<input type="text"/>
+	</div>
+	<div class="input-element">
+		<p>Висина на лет</p>
+		<input type="text"/>
+	</div>
+	<div class="input-element">
+		<p>Тип на летало</p>
+		<select id="typeOfFlight">
+			<option value="edrilica">Едрилица</option>
+			<option value="dron"> Дрон</option>
+		</select>
+	</div>
+	<button onclick="log_flight()">Најави</button>
+	<h3><strong>Регистрирани летови</strong></h3>
+	<p>Вкупно најавени летови: 0</p>
+
+	<ul>
+      <li>
+		<div class="card">
+          <p>Никола Николов, Z3-UNR-123</p>
+          <p>Радиус: 200, Висина: 90</p>
+          <p>Едрилица</p>
+          <button onclick="accept_flight(this)">Потврди</button>
+          <button onclick="remove_flight(this)">Откажи</button>
+		</div>
+      </li>
+	</ul>
+
+  <script>
+    function accept_flight(button){
+      let parent = button.parentElement;
+      parent.style.backgroundColor = 'lightgreen'
+    }
+
+    function remove_flight(button){
+      let parent = button.parentElement.parentElement;
+
+      parent.remove();
+    }
+
+    function checkIfFilled(inputs){
+
+        for (const input of inputs) {
+	        if (input.value == ''){
+                alert("Ne e se potpolneto");
+                return false;
+	        }
+        }
+
+        return true;
+    }
+    function reset(inputs){
+        for (const input of inputs) {
+	        input.value = '';
+        }
+    }
+    function log_flight(){
+      var inputs = document.getElementsByTagName('input');
+
+      let nameAndSurname = inputs[0].value;
+      let flightIndex = inputs[1].value;
+      let coordinates = inputs[2].value;
+      let radius = inputs[3].value;
+      let flightHeight = inputs[4].value;
+
+      let typeOfFlight = document.getElementById('typeOfFlight').value;
+
+      if (!checkIfFilled(inputs)){
+          return;
+      }
+
+      reset(inputs);
+    }
+  </script>
+</body>
+</html>

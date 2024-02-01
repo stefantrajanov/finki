@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="../jquery/jquery-ui.css">
+	<script src="../jquery/jquery.js"></script>
+	<script src="../jquery/jquery-ui.js"></script>
+	<style>
+        ul {
+            display: inline-block;
+            vertical-align: top;
+            border: 1px solid black;
+            margin: 20px;
+            min-height: 350px;
+            min-width: 120px;
+        }
+
+        #details {
+            min-height: 100px;
+        }
+
+        .details{
+	        display: none;
+        }
+	</style>
+</head>
+<body>
+	<ul id="2016"></ul>
+	<ul id="2017"></ul>
+	<ul id="favorites"></ul>
+	<ul id="details"></ul>
+
+	<div>
+
+		<a href="https://twitter.com/"><img src="images/twitter.png" height="48" width="48"/></a>
+		<img src="images/rss.png" height="48" width="48"/>
+		<img src="images/reddit.png" height="48" width="48"/>
+		<img src="images/flickr.png" height="48" width="48"/>
+		<img src="images/facebook.png" height="48" width="48"/>
+		<img src="images/digg.png" height="48" width="48"/>
+		<img src="images/delicious.png" height="48" width="48"/>
+	</div>
+	<script>
+        $(document).ready(function () {
+
+            function getData(year) {
+                $.ajax({
+                    url: `http://ergast.com/api/f1/${year}/drivers.json`,
+                    dataType: 'json',
+                    success: function (data) {
+                        $.each(data.MRData.DriverTable.Drivers, function (index, item) {
+                            let driver = $('<li>');
+                            driver.html(item.givenName + " " + item.familyName);
+                            let details = $('<div>');
+                            details.addClass('details')
+
+                            details.html(
+                                `
+                                <p>${item.permanentNumber}</p>
+                                <p>${item.dateOfBirth}</p>
+                                <p>${item.nationality}</p>
+                                `
+                            )
+
+	                        driver.append(details)
+
+                            driver.attr('number', item.permanentNumber)
+                            driver.attr('birthday', item.dateOfBirth)
+                            driver.attr('nationality', item.nationality)
+                            driver.attr('url', item.url)
+
+                            $(`#${year}`).append(driver);
+                        })
+                    }
+                })
+            }
+
+            $('#2016, #2017').sortable({
+                connectWith: '#favorites'
+            })
+
+            $('#favorites').sortable({
+                connectWith: '#2016, #2017'
+            })
+
+            getData(2016);
+            getData(2017);
+
+            $(document).on('click', '#favorites li', function () {
+                let element = $('#details');
+                element.html(
+                    `
+                    <p>Number: ${$(this).attr('number')}</p>
+                    <p>Date of birth: ${$(this).attr('birthday')}</p>
+                    <p>Nationality: ${$(this).attr('nationality')}</p>
+                    <p>url: <a href="${$(this).attr('url')}">Link to bio</a></p>
+                    `
+                )
+
+	            $(this).find('div').slideToggle('fast');
+            })
+        })
+	</script>
+</body>
+</html>

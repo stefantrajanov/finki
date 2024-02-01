@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+  <link rel="stylesheet" href="../jquery/jquery-ui.css">
+  <script src="../jquery/jquery.js"></script>
+  <script src="../jquery/jquery-ui.js"></script>
+</head>
+<style>
+	ul{
+		display: inline-block;
+		border: 1px solid black;
+		min-height: 70px;
+		width: 150px;
+		vertical-align: top;
+		padding: 10px;
+		max-width: 150px;
+	}
+</style>
+<body>
+	<div>
+		<label>ISBN:</label>
+		<input type="text" id="isbn">
+		<label>Vnesi 10 cifren broj</label>
+		<button id="add">Add Book</button>
+	</div>
+
+	<ul id="books">
+	</ul>
+
+	<ul id="details">
+
+	</ul>
+
+	<div>
+
+	</div>
+
+
+
+  <script>
+    $(document).ready(function (){
+        $('#add').click(function (){
+            let isbn = $('#isbn').val();
+            $.ajax({
+	            url:`https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&jscmd=details&callback=mycallback`,
+	            dataType:'jsonp',
+	            success: function (data){
+                    let item = data["ISBN:" + isbn];
+
+                    let newBook = $('<li>');
+                    newBook.html(`Title: ${item.details.title}`);
+
+                    newBook.attr('isbn', item.details.isbn_13)
+                    newBook.attr('thumbnail', item.thumbnail_url)
+                    newBook.attr('info', item.info_url)
+                    newBook.attr('publishers', item.details.publishers)
+
+                    $('#books').append(newBook);
+	            },
+	            error: function (error, status, xhr){
+
+	            }
+            })
+        })
+	    $(document).on('click', '#books li', function (){
+            let details = $('#details');
+		    details.html(
+                `
+                <p>ISBN: ${$(this).attr('isbn')}</p>
+                <img src="${$(this).attr('thumbnail')}" alt=""/>
+                <p><a>${$(this).attr('info')}</a></p>
+                <p>Publishers: ${$(this).attr('publishers')}</p>
+                `
+		    )
+	    })
+
+
+
+    })
+  </script>
+</body>
+</html>

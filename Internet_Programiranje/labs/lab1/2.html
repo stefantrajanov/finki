@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+        var phoneNumber = prompt('Vnesete mobilen broj');
+
+        var operator = phoneNumber.slice(0, 2);
+
+        if (operator == '70' || operator == '71' || operator == '72') {
+            operator = 'T-mobile';
+        } else if (operator == '75' || operator == '76') {
+            operator = 'One';
+        } else {
+            operator = 'Vip';
+        }
+
+        var result =
+            '0'
+            + phoneNumber[0] + phoneNumber[1] + '/' + phoneNumber[2] + phoneNumber[3] + phoneNumber[4]
+            + '-' + phoneNumber[5] + phoneNumber[6] + phoneNumber[7] + ' - ' + operator;
+
+        console.log(result);
+	</script>
+
+</body>
+</html>

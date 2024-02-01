@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3</title>
+</head>
+<body>
+  <h1>About Me</h1>
+  <ul>
+    <li>Name: <span id="name"></span></li>
+    <li>Index:  <span id="index"></span></li>
+    <li>Hometown: <span id="hometown"></span></li>
+  </ul>
+  <script>
+    var body = document.getElementsByTagName('body');
+    body[0].style.fontFamily = 'Arial';
+
+    var spans = document.getElementsByTagName('span');
+    spans[0].innerHTML = 'Stefan';
+    spans[1].innerHTML = '221175';
+    spans[2].innerHTML = 'Kavadarci';
+
+    var li = document.getElementsByTagName('li');
+    for (const liElement of li) {
+      liElement.style.backgroundColor = 'red';
+    }
+  </script>
+</body>
+</html>

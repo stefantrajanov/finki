@@ -1,0 +1,58 @@
+$(document).ready(function (){
+
+    $("#prva li").click(function (){
+        var pr = $(this).attr("title")
+        getdata(pr)
+    })
+
+    function getdata(citycode)
+    {
+        $("#dinamicko").html("")
+        $.ajax({
+            url:"https://"+citycode+".herokuapp.com/store_data",
+            dataType: "json",
+            success: function (data){
+                $.each(data.objects.stores,function(i,item){
+
+                    var drug = $("<li>")
+                    drug.html(item.storeName+" "+item.region)
+                    drug.appendTo("#dinamicko")
+
+                    var tret = $("<div>")
+                    tret.attr("class","info")
+                    tret.html("Open Hours:" + " " +item.openHours)
+
+                    var cetvrt =  $("<div>")
+                    cetvrt.attr("class","info")
+                    cetvrt.html("Address:" + " " +item.address)
+
+                    var pet =  $("<div>")
+                    pet.attr("class","info")
+                    pet.html("Description:" + " " +item.description)
+
+                    tret.appendTo(drug)
+                    cetvrt.appendTo(drug)
+                    pet.appendTo(drug)
+                })
+            }
+        })
+    }
+
+    $(document).on("click","#dinamicko li",function (){
+        $(this).find(".info").slideToggle(200)
+
+    })
+    $(document).on("click","#listbuilder li",function (){
+        $(this).find(".info").slideToggle(200)
+    })
+    $("#listbuilder").sortable({
+        connectWith: "#dinamicko"
+    }).disableSelection()
+
+    $("#dinamicko").sortable({
+        connectWith: "#listbuilder"
+    }).disableSelection()
+
+
+
+})

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="jquery/jquery-ui.css">
+    <script src="jquery/jquery.js"></script>
+    <script src="jquery/jquery-ui.js"></script>
+    <script src="skript.js"></script>
+
+    <style>
+        ul{
+            display: inline-block;
+            width: 250px;
+            vertical-align: top;
+            border: 1px solid blueviolet;
+        }
+         #prva li:hover
+        {
+            background: #c8a187;
+            cursor: pointer;
+        }
+        li
+        {
+            list-style-type: circle;
+        }
+        .info
+        {
+            display: none;
+            border: 1px solid black;
+        }
+        #dinamicko li
+        {
+            color: #c07dc8;
+            cursor: pointer;
+        }
+        #dinamicko li .info
+        {
+           color: darkred;
+        }
+        #listbuilder li
+        {
+            cursor: pointer;
+            color: red;
+        }
+        #listbuilder li .info
+        {
+            color: #b84e64
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul id="prva">
+        <li title="sk442">Скопје</li>
+        <li title="bg3164">Београд</li>
+        <li title="zg73">Загреб</li>
+        <li title="sr49316">Сараево</li>
+        <li title="lj431">Љубљана</li>
+        <li title="ti1212">Tитоград</li>
+    </ul>
+
+    <ul id="dinamicko">
+
+    </ul>
+
+    <ul id="listbuilder">
+
+    </ul>
+
+
+
+
+
+</body>
+</html>

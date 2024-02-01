@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2</title>
+</head>
+<body>
+  <button onclick="change_image()">Change Image</button>
+	<div>
+        <img src="" alt="image" id="theImage"/>
+	</div>
+  <script>
+	  var lastNumber = 0;
+	  function change_image(){
+          let data = {
+              1 : 'https://designmodo.com/wp-content/uploads/2014/07/free-photos.jpg',
+              2 : 'https://farm5.staticflickr.com/4060/4567292488_5d3f4b05f6_z.jpg',
+              3 : 'https://wallup.net/wp-content/uploads/2017/03/28/401266-landscape-road-forest-748x421.jpg'
+          }
+
+          while (true){
+              var random = Math.random() * 10;
+              random = Math.floor(random);
+
+
+              if (random >= 1 && random <=3 && random !== lastNumber) {
+                  console.log(random)
+	              lastNumber = random;
+                  break;
+              }
+          }
+
+          let image = document.getElementById('theImage');
+          image.setAttribute('src', data[`${random}`]);
+	  }
+  </script>
+</body>
+</html>
