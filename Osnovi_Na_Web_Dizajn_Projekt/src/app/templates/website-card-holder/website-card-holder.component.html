@@ -1,0 +1,12 @@
+<div class="card mt-5" [class.hovered]="isHovered" (mouseenter)="onCardMouseEnter()" (mouseleave)="onCardMouseLeave()">
+    <img src="{{ imagePath }}" alt="Website Screenshot">
+    <div class="card-overlay">
+      <button class="preview-button" (click)="loadPreview()">Preview Website</button>
+      <button class="preview-button" *ngIf="authService.userIsLoggedIn"> <a href="{{ downloadLink }}" download>Download</a></button>
+      <button class="preview-button" *ngIf="!authService.userIsLoggedIn" routerLink="/auth/login">Download</button>
+    </div>
+</div>
+<span class="template-name text-uppercase "> {{ name }} </span>
+<button class="heart-button" [ngClass]="{ 'liked': isLiked }" (click)="toggleLike()">
+   <i class="fas fa-heart"></i>
+</button>

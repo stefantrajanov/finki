@@ -1,0 +1,15 @@
+<div data-aos="fade-down" class="container-fluid text-white movedown position-fixed" style="z-index: 5 !important;">
+    <button class="text-white bg-transparent mb-5" 
+        *ngIf="isMobile"
+        (click)="onBack()"
+        >
+        <i class="fa-solid fa-chevron-left"></i> Back
+    </button> 
+    <div class="container add-on d-flex justify-content-center align-content-center">
+            <div class="row" [ngClass]="[isMobile ? 'text-start' : 'text-center']">
+                <a routerLink="/legal/terms-of-service">Terms of service</a>
+                <a routerLink="/legal/privacy-policy">Privacy Policy</a>
+                <a routerLink="/contact">Contact</a>
+            </div>
+      </div>
+</div>

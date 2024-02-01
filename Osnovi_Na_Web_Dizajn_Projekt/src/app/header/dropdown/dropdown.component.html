@@ -1,0 +1,29 @@
+<div data-aos="fade-down" class="container-fluid text-white movedown position-fixed" style="z-index: 5 !important;">
+    <div class="container add-on">        
+        <button class="text-white bg-transparent mb-5" 
+        *ngIf="isMobile"
+        (click)="onBack()"
+        >
+        <i class="fa-solid fa-chevron-left"></i> Back
+      </button>      
+        <div class="row d-flex justify-content-center ">
+          <div class="col-md-4">
+            <div class="links-column" [ngClass]="{'text-start' : isMobile}">
+                <label class="text-uppercase">Create a website</label>
+              <a routerLink="/website-overview">Website Overview</a>
+              <a routerLink="/templates">Website Templates</a>
+              <a (click)="navigateToTemplates('Portfolio')">For Portfolios</a>
+              <a (click)="navigateToTemplates('Business')">For Businesses</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="links-column" [ngClass]="{'text-start mt-5' : isMobile}">
+                <label class="text-uppercase">Go Online</label>
+              <a href="https://namelix.com/"    target="_blank">Get a Name</a>
+              <a routerLink="domains">Buy a Domain</a>
+              <a href="https://hostgator.com/"  target="_blank">Start a Host</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

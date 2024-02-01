@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap');
+* {
+    font-family: 'Lexend', sans-serif;
+    
+}
+
+
+.main-home-container{
+    background-image: url("../../assets/images/night-show.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Lexend', sans-serif;
+    color: white;
+
+    h1 {
+        font-size: 40px;
+        margin-top: -10px;
+        // margin-bottom: 0;
+    }
+}
+
+.get-started-button{
+    background-color: #fff;
+    color: #000;
+    border-radius: 0px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 200px;
+}
+
+.btn-shadow-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-shadow-overlay::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: top 0.3s;
+  }
+  
+  .btn-shadow-overlay:hover::before {
+    top: 0;
+  }
+
+.upper{
+    margin-top: -50px;
+
+    a {
+        text-decoration: underline;
+        color: black;
+        transition: 0.3s ease-in-out;
+        text-transform: uppercase;
+
+        // hover
+        &:hover {
+            color: yellow;
+            text-decoration: none;
+            background: black;
+            width: 210px;
+        }
+    }
+}
+
+.explanation{
+    background-color: black;
+    color: white;
+    font-family: 'Lexend', sans-serif;
+
+    h1 {
+        padding: 50px 0 50px 0;
+    }
+
+    h2 {
+        padding: 10px 0 10px 0;
+        margin-top: 50px;
+        font-size: 22px;
+    }
+}
+
+.title{
+    border-bottom: solid 3px white;
+}

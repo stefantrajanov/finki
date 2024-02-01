@@ -1,0 +1,40 @@
+
+<app-auth-header [buttonText]="'register'"></app-auth-header>
+<div class="d-flex justify-content-center alert-container">
+    <div class="alert alert-danger error-alert" *ngIf="error">
+        <p>{{ error }}</p>
+    </div>
+</div>
+<div class="container-fluid main-container">
+    
+<div class="col-md-12 d-flex justify-content-center">
+         <img src="../../../assets/images/200x200-skillpix-dark.svg" class="logo-signup"/>
+    </div>
+    <div class="row">
+        <h1 class="welcome-text">Log into Skillpix</h1>
+        <div class="row mb-5">
+            <form class="form-group" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+                <input 
+                class="form-control mb-3"
+                type="email"
+                id="login-email"
+                name="login-email"
+                placeholder="Email" 
+                required
+                email
+                [(ngModel)] = "email">
+                <input
+                class="form-control"
+                type="password"
+                placeholder="Password"
+                id="login-password"
+                name="login-password"
+                required
+                minlength="6"
+                [(ngModel)] = "password">
+                <button class="login-button btn-shadow-overlay" type="submit" [disabled]="!loginForm.valid">Log in</button>
+            </form>
+            <a routerLink="/auth/reset-password">Reset password</a>
+        </div>
+    </div>
+</div>

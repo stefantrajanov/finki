@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
+h1{
+    font-family: 'Lexend', sans-serif;
+}
+
+.category-label{
+    font-family: 'Lexend', sans-serif;
+    font-size: 10px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.checkbox-text{
+    
+    font-size: 14px;
+    // a lighter shade of black
+    color: grey;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.5s;
+}
+
+.checkbox-text:hover{
+    color: black;
+}
+
+.form-check-input{
+    background-color: #f2f2f2;
+    border-color: grey;
+    cursor: pointer;
+}
+
+.form-check-label{
+    cursor: pointer;
+}
+
+.form-check-input:checked{
+    background-color: black;
+}
+
+.seperate{
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.category-link{
+    font-family: 'Lexend', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    color: grey;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.category-link:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.category-link.active{
+    color: black;
+    text-decoration: none;
+}
+
+.max-h{
+    max-height: 100px;
+    // overflow: hidden;
+}
+
+.templates-found{
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    color: black;
+    margin-bottom: -15px;
+}
+
+.wish-list-button{
+    padding: 5px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    border-radius: 5%;
+    text-transform: uppercase;
+    transition: 0.5s;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+.wish-list-button:hover{
+    background-color: yellow;
+}
+
+.is-liked i{
+    color: red;
+}

@@ -1,0 +1,15 @@
+
+
+<div class="iframe-container">
+    <div class="container-fluid bg-white options">
+      <a routerLink="/templates" class="go-back-button"><i class="fas fa-arrow-left me-2"></i> Go back to templates</a>
+      <div class="view-buttons">
+        <button class="view-button" (click)="changeView('mobile')"><i class="fas fa-mobile-alt"></i></button>
+        <button class="view-button" (click)="changeView('tablet')"><i class="fas fa-tablet-alt"></i></button>
+        <button class="view-button" (click)="changeView('desktop')"><i class="fas fa-desktop"></i></button>
+      </div>
+    </div>
+    <div style="height: 100vh;" class="d-flex justify-content-center align-content-center">
+        <iframe [src]="filePathUrl" width="100%" height="100%" frameborder="0" [ngClass]="currentView"></iframe>
+    </div>  
+  </div>

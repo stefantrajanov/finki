@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
+.movedown{
+    background-color: black;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.links-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px; /* Adjust the gap between links */
+    color: white !important;
+    text-align: center;
+  }
+
+a {
+    color: white ;
+    text-decoration: none !important;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.5s;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    font-family: 'Lexend', sans-serif;
+    margin-top: 20px;
+}
+
+a::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: yellow; /* Adjust underline color */
+    transition: width 1s;
+}
+
+a:hover{
+    color: yellow;
+    border-color: yellow;
+}
+
+A:hover::before{
+    width: 100%;
+}
+
+label{
+    font-size: small;
+    opacity: 0.75;
+}
+
+button{
+    background: transparent;
+    border: none;
+    font-size: 18px;
+}

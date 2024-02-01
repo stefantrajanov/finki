@@ -1,0 +1,18 @@
+<div class="container-fluid main-home-container d-flex justify-content-center">
+    <div class="container d-flex justify-content-center align-items-center flex-column text-white z-3 ">
+        <h1>Check if your domain is available</h1>
+        <div class="input-group mb-3" id="domain-input">
+            <input type="text" class="form-control bg-transparent text-white" placeholder="Domain name" aria-label="Domain name" aria-describedby="button-addon2" [(ngModel)] = "domain">
+        </div>
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary search-button" (click)="onCheckDomain()" type="button" id="button-addon2">Check</button>
+        </div>
+        <div>
+            <p *ngIf="isAvailable" class="mt-5">The domain is available <i class="fa-solid fa-check" style="color: green; font-size: 20px;"></i></p>
+            <p *ngIf="isUnavailable" class="mt-5">The domain is not available <i class="fa-solid fa-x" style="color: red; font-size: 20px;"></i></p>
+        </div>
+        <div *ngIf="showDropdown" class="mt-5">
+            <a href="{{ domains.registerURL }}" target="_blank" *ngFor="let domains of similarDomains.slice(0, 7)"> {{ domains.domain }}</a>    
+        </div>
+    </div>
+</div>

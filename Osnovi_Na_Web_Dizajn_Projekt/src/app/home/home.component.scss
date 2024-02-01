@@ -1,0 +1,220 @@
+
+
+.main-home-container{
+    background-image: url("../../assets/images/home-page-first-background-WITH-TEXT-2.webp");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+
+    @media screen and (max-width: 600px) {
+        background-image: url("../../assets/images/home-page-first-background-mobile.png");
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+      }
+}
+
+.welcome-text{
+    padding-top: 14vh;
+}
+
+.big-font{
+    font-size: 190px;
+
+    // smaller font size for mobile
+    @media screen and (max-width: 600px) {
+        font-size: 50px;
+      }
+}
+
+.index-big-font{
+    font-size: 130px;
+    margin-top: -50px;
+}
+
+.description{
+    font-size: 16px;
+    font-weight: 600;
+    // shadow on text
+    text-shadow: -10px 5px 10px #000000;
+}
+
+.title{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.get-started-button{
+    background-color: #fff;
+    color: #000;
+    border-radius: 0px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+.btn-shadow-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-shadow-overlay::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: top 0.3s;
+  }
+  
+  .btn-shadow-overlay:hover::before {
+    top: 0;
+  }
+  
+
+.closer{
+    margin-bottom: -300px;
+}
+
+.example-site-view{
+    background-image: url("../../assets/images/One-Page-Portfolio.png");
+    background-size: cover;
+    // fit entire image in screen
+    background-position: center;
+    // nice gray border
+    border: 50px solid #cccccc;
+
+    // mobile
+    @media screen and (max-width: 600px) {
+        border: 10px solid #cccccc;
+        width: 500px;
+        height: 200px;
+      }
+
+}
+
+.step-one {
+    height: 100vh;
+    background-color: black;
+
+    @media screen and (max-width: 600px) {
+        height: 30vh;
+        display: flex;
+        align-items: end;
+      }
+}
+
+.step-one-example{
+    background-image: url("../../assets/images/apollo.png");
+    background-size: cover;
+    // fit entire image in screen
+    background-position: center;
+    border: 50px solid black;
+    height: 100vh;
+    margin-bottom: 50px;
+
+    @media screen and (min-width: 1024px) and (max-width: 1300px) {
+        height: 30vh; // Height for laptops
+      }
+    
+    @media screen and (min-width: 1301px) {
+        height: 70vh; // Height for monitors
+    }
+
+    @media screen and (max-width: 600px) {
+        border: 10px solid black;
+        height: 20vh;
+      }
+    
+    
+}
+.step-one-one{
+    height: 100vh;
+    background-color: black;
+
+    // mobile
+    @media screen and (max-width: 600px) {
+        height: 80vh;
+      }
+}
+
+
+.helper{
+    font-size: 20px; 
+    font-weight: 600;
+    font-family: 'Lexend', sans-serif;
+    position: relative;
+  }
+
+.helper p{
+    margin: 0;
+}
+
+.helper .h1 {
+    position: absolute;
+    top: 0;
+    left: 5%; /* Adjust as needed */
+    margin-top: 10px; /* Add spacing from the top */
+}
+  
+  /* Position the bottom paragraph */
+.helper .position-absolute {
+    position: absolute;
+    bottom: 0;
+    left: 5%; /* Adjust as needed */
+    margin-bottom: 10px; /* Add spacing from the bottom */
+}
+
+.showcase{
+    background-image: url("../../assets/images/linkedin.jpg");
+    background-size: cover;
+    // fit entire image in screen
+    background-position: center;
+    height: 100vh;
+
+    // mobile
+    @media screen and (max-width: 600px) {
+        height: 50vh;
+      }
+}
+
+.showcase-2{
+    background-image: url("../../assets/images/linkedin-2.jpg");
+    background-size: cover;
+    // fit entire image in screen
+    background-position: center;
+    height: 100vh;
+
+    @media screen and (max-width: 600px) {
+        height: 50vh;
+      }
+}
+
+.the-family-font{
+    font-family: 'Lexend', sans-serif !important; 
+}
+
+.end-site{
+    margin-top: 100px;
+
+    @media screen and (min-width: 1024px) and (max-width: 1300px) {
+        height: 30vh; // Height for laptops
+      }
+    
+    @media screen and (min-width: 1301px) {
+    height: 70vh; // Height for monitors
+    }
+
+    @media screen and (max-width: 600px) {
+        height: 20vh;
+      }
+}
+
+
+.introduction{
+    width: 0%;
+}

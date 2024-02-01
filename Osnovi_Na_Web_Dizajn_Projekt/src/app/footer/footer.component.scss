@@ -1,0 +1,30 @@
+.footer-logo{
+    padding: 100px 100px 100px 50px;
+}
+
+a {
+    color: grey;
+    text-decoration: none;
+    transition: ease-in-out 0.3s;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+a:hover{
+    color: yellow;
+}
+
+.main-cont{
+    padding: 20px 0px 0px 0px;
+}
+
+// make everything resposive
+@media only screen and (max-width: 600px) {
+    .footer-logo{
+        padding: 100px 100px 100px 100px;
+    }
+
+    .row {
+        text-align: center;
+    }
+}

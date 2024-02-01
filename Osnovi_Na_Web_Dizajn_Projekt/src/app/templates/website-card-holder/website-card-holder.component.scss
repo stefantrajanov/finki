@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+     // when mobile view, it should be smaller
+     @media (max-width: 768px) {
+      width: 300px;
+      height: 500px;
+    }
+
+  
+    img {
+      width: 100%;
+      // height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease; /* Add transition for image */
+    }
+  
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+
+     
+  
+      button.preview-button {
+        background-color: transparent;
+        border: 1px solid transparent;
+        font-family: 'Lexend', sans-serif;
+        text-transform: uppercase;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        position: relative;
+        overflow: hidden;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+          }
+
+        &:hover {
+            color:black;
+
+            &:after {
+                transform: scaleX(1);
+              }
+        }
+
+        @media (max-width: 768px) {
+          font-size: 12px;
+        }
+      }
+    }
+  
+    &.hovered {
+      background-color: white;
+      img {
+        opacity: 0; /* Hide the image */
+      }
+      .card-overlay {
+        opacity: 1;
+        button {
+            background-color: white;
+            color: grey;
+        }
+      }
+    }
+  }
+
+.template-name{
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.heart-button {
+  background: transparent;
+  // color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.5s;
+}
+
+.liked {
+  color: red;
+}

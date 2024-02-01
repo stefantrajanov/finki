@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
+.main-home-container{
+    background-image: url("../../assets/images/domain-background.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Lexend', sans-serif;
+    position: relative;
+    text-align: center;
+}
+
+.main-home-container::before {
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+}
+
+
+.search-button{
+    color: white;
+    border-color: white;
+    width: 200px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+}
+
+#domain-input{
+    width: 800px;
+    height: 50px;
+    font-size: 20px;
+    font-family: 'Lexend', sans-serif;
+
+    @media (max-width: 768px) {
+        width: 300px;
+    }
+
+    .form-control::placeholder{
+        color: grey;
+    }
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+    color: white;
+    font-size: 16px;
+    // white border
+    border: 1px solid white;
+    padding: 10px 20px;
+    transition: ease-in-out 0.3s;
+    white-space: nowrap;
+    display: inline-block;
+
+
+    &:hover{
+        background-color: black;
+    }
+}

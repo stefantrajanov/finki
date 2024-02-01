@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" [ngClass]="{'black-navbar' : isScrolled || hamburgerToggled, 'bg-black position-absolute' : isTemplatesRoute, 'd-none' : isMobile && (headerService.productsToggle || headerService.resourcesToggle)}">
+    <div class="container main-nav-container">
+      <a class="navbar-brand" routerLink="/"><img src="../../assets/images/skillpix.svg"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="onHamburgerClick()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" (click)="onToggle()" >Services</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" id="dropdown2" role="button" routerLink="/templates">Templates</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" (click)="onResourceToggle()">Resources</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item" *ngIf="!isAuthenticated">
+            <a class="nav-link me-4" routerLink="auth/login" [ngClass]="{'go-left': isTemplatesRoute}">Log In</a>
+          </li>
+          <li class="nav-item" *ngIf="isAuthenticated">
+            <a class="nav-link me-4" (click)="onLogout()" style="cursor: pointer;" [ngClass]="{'go-left': isTemplatesRoute}">Log out</a>
+          </li>
+        </ul>
+        <button class="btn btn-primary get-started-button m-2 btn-shadow-overlay" routerLink="/templates" [ngClass]="{'hide': isTemplatesRoute}">Get Started</button>
+      </div>
+    </div>
+  </nav>
+  
+  <app-dropdown [@fadeInOut] *ngIf="headerService.productsToggle"></app-dropdown>
+  <app-dropdown-resource [@fadeInOut] *ngIf="headerService.resourcesToggle"></app-dropdown-resource>

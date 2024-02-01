@@ -1,0 +1,75 @@
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="container-fluid">
+    <div class="container d-flex justify-content-between ">
+        <h1>Choose a Category <br/> of your liking.</h1>
+        <button class="wish-list-button" (click)="displayWishList()"><i class="fas fa-heart"></i> Favorites</button>
+    </div>
+</div>
+<div class="container-fluid mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <p class="category-label">Type</p>
+                <div class="form-check">
+                    <div *ngFor="let type of types; let i = index" class="seperate">
+                        <input class="form-check-input" type="checkbox" (click)="onTypeClick(type.name, !type.value, i)" id="exampleCheckbox">
+                        <label class="form-check-label checkbox-text" for="exampleCheckbox">
+                            {{ type.name }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="category-label">Category</p>
+                <div class="d-flex justify-content-between">
+                  <ng-container *ngFor="let group of groupedCategories; let i = index">
+                    <ul class="list-unstyled">
+                      <li *ngFor="let category of group">
+                        <a class="category-link" (click)="onCategoryClick(category.name)">{{ category.name }}</a>
+                      </li>
+                    </ul>
+                  </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <p class="mt-5 templates-found">{{ currentTemplateCount }} Templates Found</p>
+        </div>
+        <ng-container *ngFor="let templateGroup of loadedTemplates let i = index">
+            <div class="row d-flex justify-content-around" >
+                <div class="col-md-3" [ngClass]="{'d-flex justify-content-center' : isMobile}" *ngFor="let template of templateGroup">
+                    <app-website-card-holder 
+                    [filePath]="template.filePath"
+                    [name]="template.name"
+                    [downloadLink]="template.donwloadPath"
+                    [imagePath]="template.imagePath"
+                    [isLiked]="template.isLiked"
+                    data-aos="fade-in">
+                    </app-website-card-holder>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/><br/>
+<br/>
+<br/>
+<br/><br/>
+<br/>
+<br/>
+<br/><br/>
+<br/>
+<br/>
+<br/><br/>
+<br/>
+<br/>
+<br/>

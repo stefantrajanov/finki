@@ -1,0 +1,197 @@
+<div class="container-fluid main-home-container d-flex justify-content-center">
+    
+</div>
+<div class="container-fluid">
+    <div class="container" *ngIf="!isMobile">
+        <h1 class="text-center text-uppercase big-font text-dark">
+            <p class="closer text-start" data-aos="flip-up">Boost</p>
+            <br/>
+            <p class="closer" data-aos="flip-up">Your</p>
+            <br/>
+            <p class="text-end" data-aos="flip-up">Career</p>
+        </h1>
+    </div>
+    <div class="container" *ngIf="isMobile">
+      <h1 class="text-center text-uppercase big-font text-dark">
+          <p class="text-start" data-aos="flip-up">Boost</p>
+          <p data-aos="flip-up">Your</p>
+          <p class="text-end" data-aos="flip-up">Career</p>
+      </h1>
+  </div>
+    <div class="container mt-5 " *ngIf="!isMobile">
+        <div class="row">
+          <div class="col-md-6 bg-black example-site-view" data-aos="fade-in">
+            <!-- Black box on the left -->
+          </div>
+          <div class="col-md-6 the-family-font" >
+            <ul class="list-unstyled ms-5">
+              <li class="d-flex">
+                <p class="index-big-font" data-aos="fade-in">1</p>
+                <div class="ms-5 ">
+                    <p class="title align-text-bottom " data-aos="fade-in">Create your website</p>
+                    <p class="description text-start " data-aos="fade-in">Choose from our top-tier website templates, designer fonts, and color palettes that perfectly match your unique style and professional requirements.</p>
+                </div>
+              </li>
+              <li class="d-flex">
+                <p class="index-big-font" data-aos="fade-in">2</p>
+                <div class="ms-5">
+                    <p class="title align-text-bottom" data-aos="fade-in">Boost yourself</p>
+                    <p class="description text-start " data-aos="fade-in">Stand out in every inbox and social feed. Captivate your audience with striking visuals and compelling content that leaves a lasting impression.</p>
+                </div>
+              </li>
+            <span class="form-control-lg text-uppercase fw-bold " data-aos="fade-in">Simply <button class="get-started-button btn-shadow-overlay text-uppercase" routerLink="/templates"> Get Started!</button></span>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <div class="container mt-5 " *ngIf="isMobile">
+      <div class="row">
+        <div class="col-md-6 bg-black example-site-view" data-aos="fade-in">
+          <!-- Black box on the left -->
+        </div>
+        <div class="col-md-6 the-family-font mt-5">
+          <ul class="list-unstyled ms-1">
+            <li class="d-flex">
+              <p class="index-big-font" data-aos="fade-in">1</p>
+              <div class="ms-5 ">
+                  <p class="title align-text-bottom " data-aos="fade-in">Create your website</p>
+                  <p class="description text-start " data-aos="fade-in">Choose from our top-tier website templates, designer fonts, and color palettes that perfectly match your unique style and professional requirements.</p>
+              </div>
+            </li>
+            <li class="d-flex">
+              <p class="index-big-font" data-aos="fade-in">2</p>
+              <div class="ms-5">
+                  <p class="title align-text-bottom" data-aos="fade-in">Boost yourself</p>
+                  <p class="description text-start " data-aos="fade-in">Stand out in every inbox and social feed. Captivate your audience with striking visuals and compelling content that leaves a lasting impression.</p>
+              </div>
+            </li>
+          <span class="form-control-lg text-uppercase fw-bold " data-aos="fade-in">Simply <button class="get-started-button btn-shadow-overlay text-uppercase" routerLink="/templates"> Get Started!</button></span>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
+<br>
+<br>
+
+<!-- STEP-ONE -->
+<div class="container-fluid step-one" >
+  <div class="container text-white">
+    <app-scroll-indicator
+    [number]="1"
+    [threshold]="1300" 
+    [stop]="3000"
+    *ngIf="!isMobile">
+  </app-scroll-indicator>
+    <div class="step-one-example" data-aos="zoom-in" data-aos-duration="1000"></div>
+  </div>
+</div>
+<div class="container-fluid bg-black">
+  <div class="container step-one-one" data-aos="fade-in" data-aos-duration="2000">
+    <app-template-catalog></app-template-catalog>
+  </div>
+</div>
+
+<!-- PROMOTION -->
+<div class="container-fluid" *ngIf="!isMobile">
+  <div class="container text-black">
+    <app-scroll-indicator [number]="2" [threshold]="2800" [stop]="6800"></app-scroll-indicator>
+  </div>
+</div>
+<div class="container-fluid" *ngIf="!isMobile">
+      <div class="container" style="margin-bottom: -100px;">
+        <h1 class="text-center text-uppercase big-font text-dark">
+            <p class="closer text-end" data-aos="flip-down">Promote</p>
+            <br/>
+            <p class="text-start" data-aos="flip-down">Yourself</p>
+            <br/>
+        </h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 bg-black showcase" data-aos="fade-right">
+          </div>
+          <div class="col-md-6 helper">
+            <p class="h1 ms-5" data-aos="fade-left">Showcase talents, open doors, advance career</p>
+            <p class="ms-5 position-absolute" data-aos="fade-left">A well-crafted portfolio website showcases your skills, achievements, and personality to potential employers or clients, leaving a lasting digital impression that elevates your career prospects and opportunities.</p>
+            </div>
+          </div>
+        </div>
+      
+      <hr/>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 bg-black showcase-2" data-aos="fade-right">
+          <!-- [Image on the left -->
+          </div>
+          <div class="col-md-6 helper">
+          <p class="h1 ms-5" data-aos="fade-left">Enhance your online influence.</p>
+          <p class="ms-5 position-absolute" data-aos="fade-left">Engage followers with dynamic portfolio highlights, sparking conversations and expanding your network's horizons.</p>
+          </div>
+        </div>
+      </div>
+</div>
+<!-- For mobile -->
+<div class="container-fluid" *ngIf="isMobile">
+  <div class="container">
+    <h1 class="text-center text-uppercase big-font text-dark">
+      <p class="text-end" data-aos="flip-down">Promote</p>
+      <p class="text-start" data-aos="flip-down">Yourself</p>
+    </h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 bg-black showcase" data-aos="fade-right">
+        <!-- Background image -->
+      </div>
+      <div class="col-md-6 helper" data-aos="fade-right">
+        <h1 class="mb-5 mt-5">Showcase talents, open doors, advance career</h1>
+        <p>A well-crafted portfolio website showcases your skills, achievements, and personality to potential employers or clients, leaving a lasting digital impression that elevates your career prospects and opportunities.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 bg-black showcase-2" data-aos="fade-right">
+        <!-- Background image -->
+      </div>
+      <div class="col-md-6 helper" data-aos="fade-right">
+        <h1 class="mb-5 mt-5">Enhance your online influence.</h1>
+        <p>Engage followers with dynamic portfolio highlights, sparking conversations and expanding your network's horizons.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-black mt-5">
+  <div class="container">
+    <br/>
+    <br/>
+    <h1 class="text-white the-family-font" data-aos="fade-down">But how do I start?</h1>
+    <br/>
+    <br/>
+    <app-faq></app-faq>
+  </div>
+   <div class="container text-black the-family-font">
+    <div class="row">
+      <div class="bg-black end-site d-flex justify-content-center">
+        <img src="../../assets/images/end-image.png" data-aos="zoom-in" data-aos-duration="1000">
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-5" style="z-index: 1 !important;">
+    <button class="get-started-button btn-shadow-overlay p-5" data-aos="zoom-in" style="font-size: 30px; " routerLink="/templates">Lets go</button>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+</div>
+<script>
+  
+</script>

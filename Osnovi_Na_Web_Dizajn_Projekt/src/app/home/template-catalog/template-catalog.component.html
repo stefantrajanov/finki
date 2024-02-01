@@ -1,0 +1,55 @@
+<div *ngIf="!isMobile">
+  <p class="h1 text-white the-family-font">Tailored templates to suit <br> every need and goal.</p>
+  <p class="text-white the-family-font">Choose a category.</p>
+  <div class="navigation d-flex ">
+      <ul class="list-unstyled options link-list">
+        <li 
+      lass="link"
+      *ngFor="let option of options; let i = index"
+      (mouseenter)="loadImage(option, i, true)"
+      (mouseleave)="startImageShuffling()" 
+      [class.active]="i === activeImageIndex"
+      >
+      
+          {{ option }}
+        </li>
+      </ul>
+      <div class="image-container">
+        <img 
+          [src]="selectedImage"
+          alt="Selected Image"
+          height="400px"
+          [@fadeIn]="fadeInState"
+          >
+      </div>
+  </div>
+  <a routerLink="/templates" class="browse the-family-font">BROWSE ALL TEMPLATES &rarr;</a>
+</div>
+
+<div *ngIf="isMobile">
+  <p class="h1 text-white the-family-font">Tailored templates to suit <br> every need and goal.</p>
+  <p class="text-white the-family-font">Choose a category.</p>
+  <div class="navigation">
+      <ul class="list-unstyled options link-list">
+        <li 
+      lass="link"
+      *ngFor="let option of options; let i = index"
+      (mouseenter)="loadImage(option, i, true)"
+      (mouseleave)="startImageShuffling()" 
+      [class.active]="i === activeImageIndex"
+      >
+      
+          {{ option }}
+        </li>
+      </ul>
+      <div class="image-container mt-5">
+        <img 
+          [src]="selectedImage"
+          alt="Selected Image"
+          width="350px"
+          [@fadeIn]="fadeInState"
+          >
+      </div>
+  </div>
+  <a routerLink="/templates" class="browse the-family-font">BROWSE ALL TEMPLATES &rarr;</a>
+</div>

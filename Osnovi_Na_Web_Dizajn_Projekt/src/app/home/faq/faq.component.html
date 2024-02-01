@@ -1,0 +1,7 @@
+<div class="faq-container">
+    <div *ngFor="let item of faqData" class="faq-item">
+        <div data-aos="fade-in" class="question" (click)="toggleAnswer(item)">{{ item.question }}</div>
+        <div class="answer" [ngClass]="{ 'expanded': item.expanded }" [innerHTML]="item.answer"></div>
+        <br/>
+    </div>
+</div>
