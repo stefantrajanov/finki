@@ -35,7 +35,7 @@ export class AuthenticationService {
       returnSecureToken: true,
     }
 
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAUcQgdr3jgkaf-oZgpMVtCzzRpwlvLZ7Q',
+    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=KEYHERE',
     userData)
     .pipe(catchError(errorResponse => {
       let errorMessage = 'An unknown error occurred!';
@@ -80,7 +80,7 @@ export class AuthenticationService {
       idToken: idToken
     }
 
-    return this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyAUcQgdr3jgkaf-oZgpMVtCzzRpwlvLZ7Q', data);
+    return this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=KEYHERE', data);
   }
 
   logIn(email: string, password: string){
@@ -91,7 +91,7 @@ export class AuthenticationService {
       returnSecureToken: true,
     }
 
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAUcQgdr3jgkaf-oZgpMVtCzzRpwlvLZ7Q', userData)
+    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=KEYHERE', userData)
     .pipe(catchError(errorResponse => {
       let errorMessage = 'An unknown error occurred!';
 
@@ -165,6 +165,6 @@ export class AuthenticationService {
       email: email,
     }
 
-    return this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyAUcQgdr3jgkaf-oZgpMVtCzzRpwlvLZ7Q', data);
+    return this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=KEYHERE', data);
   }
 }

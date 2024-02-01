@@ -35,11 +35,11 @@ export class DomainCheckerService {
 
 
   checkDomain(domain: string) {
-    return this.httpClient.get<serverResponseArray>(`https://domainr.p.rapidapi.com/v2/status?mashape-key=b60f503a58mshc0d4193208cf660p13e849jsn37a08c9401a9&domain=${domain}`);
+    return this.httpClient.get<serverResponseArray>(`https://domainr.p.rapidapi.com/v2/status?mashape-key=KEYHERE&domain=${domain}`);
   }
 
   getSimilarDomains(domain: string) {
-    return this.httpClient.get<similarDomainArray>(`https://domainr.p.rapidapi.com/v2/search?mashape-key=b60f503a58mshc0d4193208cf660p13e849jsn37a08c9401a9&query=${domain}`);
+    return this.httpClient.get<similarDomainArray>(`https://domainr.p.rapidapi.com/v2/search?mashape-key=KEYHERE=${domain}`);
   }
   
 }
