@@ -1,5 +1,7 @@
 API за овие задачи повеќето не работат, за да можеш да пробуеш со API потребно е да инсталираш json server за симулација на API.
+т.е сам да си направиш API,
 
+5 минути видео на како да го направиш тоа -> https://www.youtube.com/watch?v=kqI-KxB-giQ
 
 -> https://github.com/typicode/json-server
 -> https://www.npmjs.com/package/json-server
